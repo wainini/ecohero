@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerInteractArea : MonoBehaviour
+public partial class Player
 {
+    [Header("Interact Detection")]
     [SerializeField] private Transform detectPoint;
     [SerializeField] private float areaSize = 2f;
     [SerializeField] private bool drawGizmos = true;
@@ -13,10 +14,6 @@ public class PlayerInteractArea : MonoBehaviour
 
     //private List<IInteractables> interactablesInArea = new();
     private IInteractables nearestInteractable;
-    private void Update()
-    {
-        SearchInteractables();
-    }
 
     private void SearchInteractables()
     {

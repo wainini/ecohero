@@ -7,6 +7,8 @@ public class InputManager : MonoBehaviour
 {
     public static InputManager Instance { get; private set; }
 
+    public Action OnInteractInput;
+
     private Vector2 moveInput;
     public Vector2 MoveInput { get { return moveInput; } }
 
@@ -30,6 +32,7 @@ public class InputManager : MonoBehaviour
     private void Update()
     {
         ReadMoveInput();
+        ReadInteractInput();
     }
 
     private void ReadMoveInput()
@@ -38,5 +41,13 @@ public class InputManager : MonoBehaviour
         float y = Input.GetAxisRaw("Vertical");
         moveInput.x = x;
         moveInput.y = y;
+    }
+
+    private void ReadInteractInput()
+    {
+        if(Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            OnInteractInput?.Invoke();
+        }
     }
 }

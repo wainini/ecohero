@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    //Has a reference to a singleton Instance of InputManager
+    [SerializeField] private Rigidbody2D rb;
+
+    [SerializeField] private float moveSpeed = 1f;
+
+    private void Update()
     {
+        MovePlayer();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void MovePlayer()
     {
-        
+        Vector2 moveDir = InputManager.Instance.MoveInput.normalized;
+
+        Vector2 moveVector = moveDir * moveSpeed;
+
+        rb.velocity = moveVector;
     }
 }

@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class Box : Item
 {
-    public GameObject GetGameObject()
-    {
-        return gameObject;
-    }
 
-    public void Interact(GameObject actor)
+    public override void Interact(GameObject actor)
     {
         Debug.Log("Im Box");
+        base.Interact(actor);
     }
 
 }

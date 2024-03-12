@@ -5,6 +5,8 @@ using UnityEngine;
 public class Item : MonoBehaviour, IInteractables
 {
 
+    [SerializeField] private Sprite itemSprite;
+    public Sprite ItemSprite { get { return itemSprite; }}
 
     public GameObject GetGameObject()
     {

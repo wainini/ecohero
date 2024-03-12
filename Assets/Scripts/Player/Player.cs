@@ -1,10 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public partial class Player : MonoBehaviour
 {
+    [SerializeField] private int playerInventorySlot = 6;
+    public Action OnInventoryUpdate;
+
     private List<Item> inventory = new();
+
+    public List<Item> Inventory { get { return inventory; } }
 
     private void Update()
     {
@@ -26,9 +32,14 @@ public partial class Player : MonoBehaviour
 
     public void AddItem(Item item)
     {
-        inventory.Add(item);
-        //update UI using event Action
+        if (inventory.Count >= playerInventorySlot)
+        {
+            Debug.Log("Inventory is full");
+            return;
+        }
 
+        inventory.Add(item);
+        OnInventoryUpdate?.Invoke();
         Debug.Log($"Added item {item.name}");
     }
 
@@ -38,7 +49,7 @@ public partial class Player : MonoBehaviour
         {
             inventory.Remove(item);
             Debug.Log($"Removed item {item.name}");
+            OnInventoryUpdate?.Invoke();
         }
-        //update UI using event Action
     }
 }

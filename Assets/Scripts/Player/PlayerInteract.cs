@@ -9,4 +9,12 @@ public partial class Player
         if (nearestInteractable is null) return;
         nearestInteractable.Interact(this.gameObject);
     }
+
+    public void DropItem()
+    {
+        if(inventory.Count > 0)
+        {
+            RemoveItem(inventory[0]);
+        }
+    }
 }

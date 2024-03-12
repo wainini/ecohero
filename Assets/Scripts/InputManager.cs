@@ -8,6 +8,7 @@ public class InputManager : MonoBehaviour
     public static InputManager Instance { get; private set; }
 
     public Action OnInteractInput;
+    public Action OnDropInput;
 
     private Vector2 moveInput;
     public Vector2 MoveInput { get { return moveInput; } }
@@ -33,6 +34,7 @@ public class InputManager : MonoBehaviour
     {
         ReadMoveInput();
         ReadInteractInput();
+        ReadDropInput();
     }
 
     private void ReadMoveInput()
@@ -48,6 +50,14 @@ public class InputManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Mouse0))
         {
             OnInteractInput?.Invoke();
+        }
+    }
+
+    private void ReadDropInput()
+    {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            OnDropInput?.Invoke(); 
         }
     }
 }

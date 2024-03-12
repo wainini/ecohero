@@ -32,9 +32,15 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
-        ReadMoveInput();
-        ReadInteractInput();
-        ReadDropInput();
+        switch (GameManager.Instance.GameMode)
+        {
+            case GameMode.CollectTrash:
+                ReadMoveInput();
+                ReadInteractInput();
+                ReadDropInput();
+                break;
+            default:break;
+        }
     }
 
     private void ReadMoveInput()

@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour, IInteractables
+public class PickableItem : MonoBehaviour, IInteractables
 {
-
     [SerializeField] private Sprite itemSprite;
     public Sprite ItemSprite { get { return itemSprite; }}
+
+    private Dragable dragable;
 
     public GameObject GetGameObject()
     {

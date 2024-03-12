@@ -19,8 +19,8 @@ public class GameManager : MonoBehaviour
 
     public GameMode GameMode { get { return gameMode; } }
 
-    private CinemachineVirtualCamera followPlayerVCam;
-    private CinemachineVirtualCamera collectTrashVCam;
+    private CinemachineVirtualCamera playerVCam;
+    private CinemachineVirtualCamera tableVCam;
 
     private void Awake()
     {
@@ -34,8 +34,8 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
 
-        gameMode = GameMode.CollectTrash;
         FindCameras();
+        EnterCollectTrashMode();
     }
 
     private void FindCameras()
@@ -50,23 +50,23 @@ public class GameManager : MonoBehaviour
 
         for(int i = 0; i < vCams.Length; i++)
         {
-            if (vCams[i].CompareTag("FollowPlayerVCam"))
+            if (vCams[i].CompareTag("PlayerVCam"))
             {
-                followPlayerVCam = vCams[i];
+                playerVCam = vCams[i];
             }
-            else if (vCams[i].CompareTag("CollectTrashVCam"))
+            else if (vCams[i].CompareTag("TableVCam"))
             {
-                collectTrashVCam = vCams[i];
+                tableVCam = vCams[i];
             }
         }
 
-        if(followPlayerVCam is null || collectTrashVCam is null)
+        if(playerVCam is null || tableVCam is null)
         {
-            followPlayerVCam = vCams[0];
-            collectTrashVCam = vCams[1];
+            playerVCam = vCams[0];
+            tableVCam = vCams[1];
         }
-        followPlayerVCam.enabled = true;
-        collectTrashVCam.enabled = false;
+        playerVCam.enabled = true;
+        tableVCam.enabled = false;
     }
 
 
@@ -75,21 +75,36 @@ public class GameManager : MonoBehaviour
         this.gameMode = gameMode;
     }
 
+    private void SetCursorVisible(bool visible)
+    {
+        Cursor.visible = visible;
+        if (Cursor.visible)
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else if (!Cursor.visible)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
+
 #if UNITY_EDITOR
     [ContextMenu("EnterSeperateTrash")]
     public void EnterSeperateTrashMode()
     {
         ChangeGameMode(GameMode.SeperateTrash);
-        followPlayerVCam.enabled = false;
-        collectTrashVCam.enabled = true;
+        playerVCam.enabled = false;
+        tableVCam.enabled = true;
+        SetCursorVisible(true);
     }
 
     [ContextMenu("EnterCollectTrash")]
     public void EnterCollectTrashMode()
     {
         ChangeGameMode(GameMode.CollectTrash);
-        followPlayerVCam.enabled = true;
-        collectTrashVCam.enabled = false;
+        playerVCam.enabled = true;
+        tableVCam.enabled = false;
+        SetCursorVisible(false);
     }
 #endif
 }

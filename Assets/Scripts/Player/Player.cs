@@ -8,9 +8,9 @@ public partial class Player : MonoBehaviour
     [SerializeField] private int playerInventorySlot = 6;
     public Action OnInventoryUpdate;
 
-    private List<Item> inventory = new();
+    private List<PickableItem> inventory = new();
 
-    public List<Item> Inventory { get { return inventory; } }
+    public List<PickableItem> Inventory { get { return inventory; } }
 
     private void Update()
     {
@@ -30,7 +30,7 @@ public partial class Player : MonoBehaviour
         InputManager.Instance.OnDropInput -= DropItem;
     }
 
-    public void AddItem(Item item)
+    public void AddItem(PickableItem item)
     {
         if (inventory.Count >= playerInventorySlot)
         {
@@ -43,7 +43,7 @@ public partial class Player : MonoBehaviour
         Debug.Log($"Added item {item.name}");
     }
 
-    public void RemoveItem(Item item)
+    public void RemoveItem(PickableItem item)
     {
         if(inventory.Contains(item))
         {

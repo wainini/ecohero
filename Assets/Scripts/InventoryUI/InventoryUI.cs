@@ -28,9 +28,9 @@ public class InventoryUI : MonoBehaviour
 
     private void UpdateInventory()
     {
-        List<Item> playerInventory = player.Inventory;
+        List<PickableItem> playerInventory = player.Inventory;
         int idx = 0;
-        foreach(Item item in playerInventory)
+        foreach(PickableItem item in playerInventory)
         {
             slots[idx].SetIcon(item.ItemSprite);
             idx++;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Box : Item
+public class Box : PickableItem
 {
 
     public override void Interact(GameObject actor)

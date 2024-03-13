@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
 {
+    [SerializeField] private Transform dragablesParent;
     [SerializeField] private List<InventorySlot> slots;
 
     private Player player;
@@ -32,12 +33,12 @@ public class InventoryUI : MonoBehaviour
         int idx = 0;
         foreach(PickableItem item in playerInventory)
         {
-            slots[idx].SetIcon(item.ItemSprite);
+            slots[idx].InitializeSlot(item, dragablesParent);
             idx++;
         }
         for(int i = idx; i < slots.Count; i++)
         {
-            slots[idx].SetIcon(null);
+            slots[idx].RemoveSlotItem();
         }
     }
 }

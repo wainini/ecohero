@@ -4,19 +4,27 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventorySlot : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
+public class InventorySlot : MonoBehaviour, IPointerDownHandler, IDragHandler, IDropHandler
 {
     [SerializeField] private Image iconImage;
+
+    private InventoryUI inventoryUI;
+
     private PickableItem item;
     private Transform dragableParent;
 
     private DragableItem dragableItem;
 
-    public void InitializeSlot(PickableItem item, Transform dragableParent)
+    public void InitializeSlot( Transform dragableParent, InventoryUI inventoryUI)
+    {
+        this.dragableParent = dragableParent;
+        this.inventoryUI = inventoryUI;     
+    }
+
+    public void UpdateSlot(PickableItem item)
     {
         SetItem(item);
         SetIcon(item.ItemSprite);
-        this.dragableParent = dragableParent;
     }
 
     public void RemoveSlotItem()
@@ -37,16 +45,31 @@ public class InventorySlot : MonoBehaviour, IPointerDownHandler, IBeginDragHandl
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        dragableItem = Instantiate(item.Dragable, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity, dragableParent);
+        if(item is null) return;
 
+        //instantiate the dragable version of the item
+        dragableItem = Instantiate(item.Dragable, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity, dragableParent);
+        dragableItem.Pickable = item;
+        //so it's in front of camera
         dragableItem.transform.position += new Vector3(0, 0, 10);
-        eventData.pointerDrag = dragableItem.gameObject;
-        RemoveSlotItem();
     }
 
-    public void OnBeginDrag(PointerEventData eventData)
+    public void OnDrag(PointerEventData eventData)
     {
-
+        if(item is null) return;
+        //enable to instantly drag the newly instantiated item
         eventData.pointerDrag = dragableItem.gameObject;
+        dragableItem = null;
+        inventoryUI.PlayerReference.RemoveItem(item);
+    }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        Debug.Log("Droped");
+        if(eventData.pointerDrag.TryGetComponent(out DragableItem dragableItem))
+        {
+            inventoryUI.PlayerReference.AddItem(dragableItem.Pickable);
+            Destroy(eventData.pointerDrag);
+        }
     }
 }

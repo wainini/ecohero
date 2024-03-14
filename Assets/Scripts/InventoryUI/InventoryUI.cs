@@ -7,33 +7,44 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private Transform dragablesParent;
     [SerializeField] private List<InventorySlot> slots;
 
-    private Player player;
+    public Player PlayerReference { get; private set; }
     private void Start()
     {
-        player = FindObjectOfType<Player>();
+        PlayerReference = FindObjectOfType<Player>();
+        InitializeSlots();
     }
+
+    private void InitializeSlots()
+    {
+        foreach (InventorySlot slot in slots)
+        {
+            slot.InitializeSlot(dragablesParent, this);
+        }
+    }
+
 
     private void OnEnable()
     {
-        if(player is null)
+        if(PlayerReference is null)
         {
-            player = FindObjectOfType<Player>();
+            PlayerReference = FindObjectOfType<Player>();
         }
-        player.OnInventoryUpdate += UpdateInventory;
+        PlayerReference.OnInventoryUpdate += UpdateInventory;
     }
 
     private void OnDisable()
     {
-        player.OnInventoryUpdate -= UpdateInventory;
+        PlayerReference.OnInventoryUpdate -= UpdateInventory;
     }
 
     private void UpdateInventory()
     {
-        List<PickableItem> playerInventory = player.Inventory;
+        List<PickableItem> playerInventory = PlayerReference.Inventory;
         int idx = 0;
         foreach(PickableItem item in playerInventory)
         {
-            slots[idx].InitializeSlot(item, dragablesParent);
+            Debug.Log(item.name);
+            slots[idx].UpdateSlot(item);
             idx++;
         }
         for(int i = idx; i < slots.Count; i++)

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public partial class Player : MonoBehaviour
 {
-    [SerializeField] private int playerInventorySlot = 6;
+    [SerializeField] private static int playerInventorySlot = 6;
     public Action OnInventoryUpdate;
 
     private List<PickableItem> inventory = new();

@@ -4,27 +4,49 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 
-public class DragableItem : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
+public class DragableItem : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeField] private DragableItemData data;
     public DragableItemData Data { get { return data; } }
 
     private PickableItem pickable;
+    public PickableItem Pickable
+    {
+        get
+        {
+            return pickable;
+        }
+        set
+        {
+            if(pickable is null) pickable = value;
+        }
+    } 
 
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("AAAAA");
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         transform.position= Camera.main.ScreenToWorldPoint(eventData.position);
         transform.position += new Vector3(0, 0, 10);
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    public void OnEndDrag(PointerEventData eventData)
     {
+        GetComponent<BoxCollider2D>().enabled = true;
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        GetComponent<BoxCollider2D>().enabled = false;        
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
+        GetComponent<BoxCollider2D>().enabled = true;
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        GetComponent<BoxCollider2D>().enabled = false;
     }
 }

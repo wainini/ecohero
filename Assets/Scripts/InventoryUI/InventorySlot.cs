@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventorySlot : MonoBehaviour, IPointerDownHandler, IDragHandler, IDropHandler
+public class InventorySlot : MonoBehaviour, IPointerDownHandler, IDragHandler, IDropHandler, IInitializePotentialDragHandler, IPointerUpHandler
 {
     [SerializeField] private Image iconImage;
 
@@ -43,24 +44,13 @@ public class InventorySlot : MonoBehaviour, IPointerDownHandler, IDragHandler, I
         iconImage.sprite = iconSprite;
     }
 
+    //pointerdown and drag is here so OnInitializePotentialDrag and OnPointerUp works (why unity, why)
     public void OnPointerDown(PointerEventData eventData)
     {
-        if(item is null) return;
-
-        //instantiate the dragable version of the item
-        dragableItem = Instantiate(item.Dragable, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity, dragableParent);
-        dragableItem.Pickable = item;
-        //so it's in front of camera
-        dragableItem.transform.position += new Vector3(0, 0, 10);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        if(item is null) return;
-        //enable to instantly drag the newly instantiated item
-        eventData.pointerDrag = dragableItem.gameObject;
-        dragableItem = null;
-        inventoryUI.PlayerReference.RemoveItem(item);
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -71,5 +61,29 @@ public class InventorySlot : MonoBehaviour, IPointerDownHandler, IDragHandler, I
             inventoryUI.PlayerReference.AddItem(dragableItem.Pickable);
             Destroy(eventData.pointerDrag);
         }
+    }
+
+    public void OnInitializePotentialDrag(PointerEventData eventData)
+    {
+        if (item is null) return;
+
+        //instantiate the dragable version of the item
+        dragableItem = Instantiate(item.Dragable, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity, dragableParent);
+        dragableItem.Pickable = item;
+        //so it's in front of camera
+        dragableItem.transform.position += new Vector3(0, 0, 10);
+
+        SetIcon(null); //so that EventSystem doesn't think the pointer is dragging the Icon UI
+        eventData.pointerDrag = dragableItem.gameObject;
+        inventoryUI.PlayerReference.RemoveItem(item);
+        dragableItem = null;
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        //This will call the drop event if the mouse didn't move at all (drag not trigger as well as OnDrop). 
+        //This will still go through if you click an empty slot, although it won't do anything because the eventData wont have DragableItem script
+        if (eventData.dragging ) return;
+        OnDrop(eventData);
     }
 }

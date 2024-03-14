@@ -43,7 +43,6 @@ public class InventoryUI : MonoBehaviour
         int idx = 0;
         foreach(PickableItem item in playerInventory)
         {
-            Debug.Log(item.name);
             slots[idx].UpdateSlot(item);
             idx++;
         }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public partial class Player : MonoBehaviour
 {
@@ -40,7 +41,6 @@ public partial class Player : MonoBehaviour
 
         inventory.Add(item);
         OnInventoryUpdate?.Invoke();
-        Debug.Log($"Added item {item.name}");
     }
 
     public void RemoveItem(PickableItem item)
@@ -48,7 +48,6 @@ public partial class Player : MonoBehaviour
         if(inventory.Contains(item))
         {
             inventory.Remove(item);
-            Debug.Log($"Removed item {item.name}");
             OnInventoryUpdate?.Invoke();
         }
     }

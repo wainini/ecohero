@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 
-public class DragableItem : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler, IPointerDownHandler, IPointerUpHandler
+public class DragableItem : MonoBehaviour, IDragHandler, IEndDragHandler
 {
     [SerializeField] private DragableItemData data;
     public DragableItemData Data { get { return data; } }
@@ -20,7 +20,7 @@ public class DragableItem : MonoBehaviour, IDragHandler, IEndDragHandler, IBegin
         {
             if(pickable is null) pickable = value;
         }
-    } 
+    }
 
     public void OnDrag(PointerEventData eventData)
     {
@@ -28,25 +28,11 @@ public class DragableItem : MonoBehaviour, IDragHandler, IEndDragHandler, IBegin
 
         transform.position= Camera.main.ScreenToWorldPoint(eventData.position);
         transform.position += new Vector3(0, 0, 10);
+        GetComponent<BoxCollider2D>().enabled = false;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         GetComponent<BoxCollider2D>().enabled = true;
-    }
-
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        GetComponent<BoxCollider2D>().enabled = false;        
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        GetComponent<BoxCollider2D>().enabled = true;
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        GetComponent<BoxCollider2D>().enabled = false;
     }
 }

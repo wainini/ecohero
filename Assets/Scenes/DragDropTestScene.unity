@@ -1736,6 +1736,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7462843849348978187, guid: 730a7596378832041a279f41ebd7b689, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7462843849348978187, guid: 730a7596378832041a279f41ebd7b689, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8205656499669385271, guid: 730a7596378832041a279f41ebd7b689, type: 3}
       propertyPath: m_Name
       value: Slot (5)
@@ -2173,7 +2181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae492c7e70a258499dd6ad9d43c2a67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInventorySlot: 6
   detectPoint: {fileID: 440103602}
   areaSize: 2
   drawGizmos: 1

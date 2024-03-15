@@ -22,6 +22,20 @@ public class GameManager : MonoBehaviour
     private CinemachineVirtualCamera playerVCam;
     private CinemachineVirtualCamera tableVCam;
 
+    private bool isGamePaused = false;
+    public bool IsGamePaused 
+    {   get 
+        {
+            if (GameMode == GameMode.NotInGame)
+                return false;
+            return isGamePaused; 
+        } 
+        set 
+        {
+            isGamePaused = value;
+        } 
+    }
+
     private void Awake()
     {
         if(Instance is not null && Instance != this)

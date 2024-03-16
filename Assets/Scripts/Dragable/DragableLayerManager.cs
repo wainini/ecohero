@@ -37,6 +37,12 @@ public class DragableLayerManager : MonoBehaviour
         allDragablesInGame.Remove(item);
         dragableSpriteRenderers.Remove(item);
 
+        //ResetAllSortingOrder();
+    }
+
+    //Implement this later
+    public void OnModeChange()
+    {
         ResetAllSortingOrder();
     }
 

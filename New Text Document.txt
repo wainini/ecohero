@@ -1,0 +1,6 @@
+1. tong sampah
+2. UI
+3. HUD (score, time)
+4. dragableitempack
+5. dragable & pickable item jadiin prefab variants
+6. spawn sampah

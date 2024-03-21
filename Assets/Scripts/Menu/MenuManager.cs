@@ -68,6 +68,22 @@ public class MenuManager : MonoBehaviour
         CheckForPause();
     }
 
+    public void OpenMenuOverlap(string name)
+    {
+        Menu menu = GetMenu(name);
+
+        if (menu is null)
+        {
+            Debug.LogWarning($"Couldn't find [{name}] in the Menu List");
+            return;
+        }
+
+        menu.Canvas.enabled = true;
+        menuStack.Push(menu);
+
+        CheckForPause();
+    }
+
     public void CloseAllMenu()
     {
         if (menuStack.Count == 0) return;

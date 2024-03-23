@@ -10,7 +10,7 @@ public class DragableItem : MonoBehaviour, IDragHandler, IEndDragHandler, IIniti
     [SerializeField] private DragableItemData data;
     public DragableItemData Data { get { return data; } }
 
-    private PickableItem pickable;
+    [SerializeField] private PickableItem pickable;
     public PickableItem Pickable
     {
         get
@@ -23,9 +23,9 @@ public class DragableItem : MonoBehaviour, IDragHandler, IEndDragHandler, IIniti
         }
     }
 
+    //Variables used in dragging
     private Vector3 offset;
     private Collider2D coll;
-
     private Camera mainCam;
 
     private void Awake()

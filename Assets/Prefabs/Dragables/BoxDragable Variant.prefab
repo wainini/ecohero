@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoxDragable Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2110184830514481124, guid: b8c01e0fc0e4fea438d560f7f47db1bd, type: 3}
+      propertyPath: pickable
+      value: 
+      objectReference: {fileID: 39098218994220266, guid: 874db58953b0cfd428ee3eeda99660b6, type: 3}
     - target: {fileID: 4661562613343916406, guid: b8c01e0fc0e4fea438d560f7f47db1bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

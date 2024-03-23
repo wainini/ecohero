@@ -46,6 +46,9 @@ TagManager:
   - name: Player
     uniqueID: 3903467003
     locked: 0
+  - name: Pickables
+    uniqueID: 3821214435
+    locked: 0
   - name: Dragables
     uniqueID: 1436756247
     locked: 0

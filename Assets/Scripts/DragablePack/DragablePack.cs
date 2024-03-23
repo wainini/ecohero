@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class DragablePack : DragableItem
+public class DragablePack : DragableItem, IPointerClickHandler
 {
     [SerializeField] private List<DragableItem> dragablesInside = new();
+
 
     [ContextMenu("Unpack")]
     protected virtual void OpenPack()
@@ -30,4 +32,10 @@ public class DragablePack : DragableItem
         transform.DetachChildren();
         Destroy(this.gameObject);
     }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("Click");
+    }
+
 }

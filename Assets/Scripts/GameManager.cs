@@ -2,6 +2,7 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum GameMode
 {
@@ -48,8 +49,31 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
 
-        FindCameras();
-        EnterCollectTrashMode();
+
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if(scene.buildIndex == 0)//main menu
+        {
+            ChangeGameMode(GameMode.NotInGame);
+        }
+        else
+        {
+            FindCameras();
+            EnterCollectTrashMode();
+        }
     }
 
     private void FindCameras()

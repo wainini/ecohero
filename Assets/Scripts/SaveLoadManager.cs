@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class SaveLoadManager : MonoBehaviour
 {
+    private const string SettingsSaveDataFileName = "SettingsData.json";
     public static SaveLoadManager Instance { get; private set; }
 
     private SettingsSaveData settingsSaveData = null;
@@ -34,21 +35,32 @@ public class SaveLoadManager : MonoBehaviour
 
     private void LoadSettingsData()
     {
-        if(File.Exists(settingsDataPath))
+        if(File.Exists(settingsDataPath + SettingsSaveDataFileName))
         {
-            string dataJSON = File.ReadAllText(settingsDataPath);
+            string dataJSON = File.ReadAllText(settingsDataPath + SettingsSaveDataFileName);
             settingsSaveData = JsonUtility.FromJson<SettingsSaveData>(dataJSON);
         }
         else //there're no saved data 
         {
-            settingsSaveData = null;
+            settingsSaveData = new();
+            settingsSaveData.VolumeSaveData = new();
+            settingsSaveData.ResolutionSaveData = new();
+            settingsSaveData.VolumeSaveData.MasterSliderValue = 0.75f;
+            settingsSaveData.VolumeSaveData.SFXSliderValue = 0.75f;
+            settingsSaveData.VolumeSaveData.BGMSliderValue = 0.75f;
+            settingsSaveData.ResolutionSaveData.Fullscreen = true;
+            settingsSaveData.ResolutionSaveData.Width = 1920;
+            settingsSaveData.ResolutionSaveData.Height = 1080;
         }
     }
 
     private void SaveData()
     {
+        if(!Directory.Exists(settingsDataPath))
+            Directory.CreateDirectory(settingsDataPath);
+
         string settingsDataJSON = JsonUtility.ToJson(settingsSaveData);
-        File.WriteAllText(settingsDataPath, settingsDataJSON);
+        File.WriteAllText(settingsDataPath + SettingsSaveDataFileName, settingsDataJSON);
     }
 
     private void OnApplicationQuit()

@@ -14,6 +14,14 @@ public class DragablePack : DragableItem, IPointerClickHandler
 
         DragableUnpackButtonManager.Instance.AddDragablePack(this);
     }
+    private void Start()
+    {
+
+        foreach (DragableItem dragable in dragablesInside)
+        {
+            dragable.DisableCollider();
+        }
+    }
 
     protected override void OnDestroy()
     {
@@ -42,7 +50,7 @@ public class DragablePack : DragableItem, IPointerClickHandler
 
         foreach(DragableItem dragable in dragablesInside)
         {
-            dragable.gameObject.SetActive(true);
+            dragable.EnableCollider();
             //organize every DragableItems inside the pack
             DragableLayerManager.Instance.SetOnTop(dragable);
         }

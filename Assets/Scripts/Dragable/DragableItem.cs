@@ -28,30 +28,27 @@ public class DragableItem : MonoBehaviour, IDragHandler, IEndDragHandler, IIniti
     private Collider2D coll;
     private Camera mainCam;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         mainCam = Camera.main;
         coll = GetComponent<Collider2D>();
-    }
-
-    private void OnEnable()
-    {
         DragableLayerManager.Instance.AddDragable(this);
     }
 
-    private void OnDisable()
+    protected virtual void OnDestroy()
     {
         DragableLayerManager.Instance.RemoveDragable(this);
     }
+
     public void OnInitializePotentialDrag(PointerEventData eventData)
     {
         offset = mainCam.ScreenToWorldPoint(eventData.position) - transform.position;
         DragableLayerManager.Instance.SetOnTop(this);
     }
 
-    public void OnDrag(PointerEventData eventData)
+    public virtual void OnDrag(PointerEventData eventData)
     {
-        transform.position = mainCam.ScreenToWorldPoint(eventData.position) - offset + new Vector3(0, 0, 10);
+        transform.position = mainCam.ScreenToWorldPoint(eventData.position) - offset + new Vector3(0, 0, 0);
         coll.enabled = false;
     }
 

@@ -52,6 +52,9 @@ TagManager:
   - name: DisableUnpackLayer
     uniqueID: 941915453
     locked: 0
+  - name: TrashBin
+    uniqueID: 2896542773
+    locked: 0
   - name: Dragables
     uniqueID: 1436756247
     locked: 0

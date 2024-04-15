@@ -9,6 +9,7 @@ public class CanvasGetCamera : MonoBehaviour
 
     private void Awake()
     {
+        canvas = GetComponent<Canvas>();
         SetCanvasCamera();
     }
 

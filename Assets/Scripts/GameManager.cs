@@ -2,6 +2,7 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public enum GameMode
@@ -17,13 +18,15 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     private GameMode gameMode;
-
+    
     public GameMode GameMode { get { return gameMode; } }
 
     private CinemachineVirtualCamera playerVCam;
     private CinemachineVirtualCamera tableVCam;
 
     private bool isGamePaused = false;
+
+    public UnityEvent<GameMode> GameModeChanged = new UnityEvent<GameMode>();
     public bool IsGamePaused 
     {   get 
         {
@@ -111,6 +114,7 @@ public class GameManager : MonoBehaviour
     public void ChangeGameMode(GameMode gameMode)
     {
         this.gameMode = gameMode;
+        this.GameModeChanged.Invoke(this.gameMode);
     }
 
     private void SetCursorVisible(bool visible)

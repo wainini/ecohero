@@ -8,6 +8,8 @@ public class DragableItemData : ScriptableObject
     public string Name;
     public TrashType Type;
     public float Score;
+    public string Description;
+    public Sprite Sprite;
 }
 
 public enum TrashType

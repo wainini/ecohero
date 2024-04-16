@@ -36,6 +36,8 @@ public class AlmanacScript : MonoBehaviour
         float x_gap = 30;
         float y_gap = 30;
 
+        GameSaveData gameSaveData = SaveLoadManager.Instance.GetGameSaveData;
+
         Vector2 containerSize = almanacButtonContainer.GetComponent<RectTransform>().rect.size;
         foreach (DragableItemData item in listItemData)
         {
@@ -57,8 +59,8 @@ public class AlmanacScript : MonoBehaviour
             {
                 buttonPosition.x = 0;
                 buttonPosition.y -= y_gap + buttonSize.y;
-            }
-            bool isEnabled = Random.Range(1,10) > 5;
+            }            
+            bool isEnabled = gameSaveData.ListUnlockedItem.Contains(item.Name);
 
             AlmanacButton almanacButton = gameObject.GetComponent<AlmanacButton>();
             almanacButton.SetItemData(item, isEnabled);

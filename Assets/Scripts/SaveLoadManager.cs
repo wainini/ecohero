@@ -7,12 +7,17 @@ using UnityEngine;
 public class SaveLoadManager : MonoBehaviour
 {
     private const string SettingsSaveDataFileName = "SettingsData.json";
+    private const string GameSaveDataFileName = "GameData.json";
     public static SaveLoadManager Instance { get; private set; }
 
     private SettingsSaveData settingsSaveData = null;
     public SettingsSaveData GetSettingsData { get { return settingsSaveData; } }
 
+    private GameSaveData gameSaveData = null;
+    public GameSaveData GetGameSaveData { get { return gameSaveData; } }
+
     private string settingsDataPath;
+    private string gameDataPath;
 
     private void Awake()
     {
@@ -29,8 +34,10 @@ public class SaveLoadManager : MonoBehaviour
         #endregion
 
         settingsDataPath = Application.persistentDataPath + "/SettingsSaveData/";
+        gameDataPath = Application.persistentDataPath + "/GameSaveData/";
 
         LoadSettingsData();
+        LoadGameData();
     }
 
     private void LoadSettingsData()
@@ -54,6 +61,19 @@ public class SaveLoadManager : MonoBehaviour
         }
     }
 
+    private void LoadGameData()
+    {
+        if (File.Exists(gameDataPath + GameSaveDataFileName))
+        {
+            string dataJSON = File.ReadAllText(gameDataPath + GameSaveDataFileName);
+            gameSaveData = JsonUtility.FromJson<GameSaveData>(dataJSON);
+        }
+        else //there're no saved data 
+        {
+            gameSaveData = new GameSaveData();
+        }
+    }
+
     private void SaveData()
     {
         if(!Directory.Exists(settingsDataPath))
@@ -61,6 +81,13 @@ public class SaveLoadManager : MonoBehaviour
 
         string settingsDataJSON = JsonUtility.ToJson(settingsSaveData);
         File.WriteAllText(settingsDataPath + SettingsSaveDataFileName, settingsDataJSON);
+
+
+        if (!Directory.Exists(gameDataPath))
+            Directory.CreateDirectory(gameDataPath);
+
+        string gameDataJSON = JsonUtility.ToJson(gameSaveData);
+        File.WriteAllText(gameDataPath + GameSaveDataFileName, gameDataJSON);
     }
 
     private void OnApplicationQuit()

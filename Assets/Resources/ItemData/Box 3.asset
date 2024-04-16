@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e49c4c79e5819b441892a2b359b547c4, type: 3}
   m_Name: Box 3
   m_EditorClassIdentifier: 
-  Name: Box2
+  Name: 232Box2
   Type: 2
   Score: 1
   Description: packablesssss222

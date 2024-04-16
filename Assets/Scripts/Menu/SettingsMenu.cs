@@ -20,6 +20,7 @@ public class SettingsMenu : MonoBehaviour
 
     private IEnumerator WaitUntilDataAvailable()
     {
+        yield return new WaitUntil(() => SaveLoadManager.Instance is not null);
         yield return new WaitUntil(() => SaveLoadManager.Instance.GetSettingsData is not null);
 
         saveData = SaveLoadManager.Instance.GetSettingsData; //save the reference to be access/changed everytime setting is changed

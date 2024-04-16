@@ -2442,6 +2442,7 @@ GameObject:
   - component: {fileID: 1255696008}
   - component: {fileID: 1255696009}
   - component: {fileID: 1255696010}
+  - component: {fileID: 1255696011}
   m_Layer: 0
   m_Name: ===GameManager===
   m_TagString: Untagged
@@ -2492,6 +2493,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragableSortingLayer: Dragables
+--- !u!114 &1255696011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255696007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40785d98322f3fa4babac538b8fb573c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1261350958
 GameObject:
   m_ObjectHideFlags: 0

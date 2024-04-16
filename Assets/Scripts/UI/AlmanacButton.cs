@@ -34,13 +34,13 @@ public class AlmanacButton : MonoBehaviour
         this.isEnabled = isEnabled;
         if (isEnabled)
         {
-            itemImage.color = Color.gray;
-            button.enabled = false;
+            itemImage.color = Color.white;
+            button.enabled = true;
         }
         else
         {
-            itemImage.color = Color.white;
-            button.enabled = true;
+            itemImage.color = Color.gray;
+            button.enabled = false;
         }
     }
 }

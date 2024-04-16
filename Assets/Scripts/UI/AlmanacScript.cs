@@ -51,7 +51,7 @@ public class AlmanacScript : MonoBehaviour
 
             float new_x_position = buttonPosition.x + x_gap + buttonSize.x;
 
-            if (new_x_position < containerSize.x - x_gap - buttonSize.x)
+            if (new_x_position <= containerSize.x - buttonSize.x)
             {
                 buttonPosition.x = new_x_position;
             }

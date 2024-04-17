@@ -79,6 +79,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ChangeScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
     private void FindCameras()
     {
         CinemachineVirtualCamera[] vCams = FindObjectsByType<CinemachineVirtualCamera>(FindObjectsSortMode.None);

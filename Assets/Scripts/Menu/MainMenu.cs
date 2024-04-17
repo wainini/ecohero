@@ -6,10 +6,10 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private string settingsMenuName = "SettingsMenu";
-
+    [SerializeField] private string levelSelectMenuName = "LevelSelectMenu";
     public void StartGame()
     {
-        //starts game
+        MenuManager.Instance.OpenMenu(levelSelectMenuName);
     }
 
     public void OpenSettings()

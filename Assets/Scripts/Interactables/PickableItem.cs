@@ -28,6 +28,7 @@ public class PickableItem : MonoBehaviour, IInteractables
         if(actor.TryGetComponent(out Player player))
         {
             player.AddItem(this);
+            Destroy(this.gameObject);
         }
     }
 }

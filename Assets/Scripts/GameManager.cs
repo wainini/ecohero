@@ -25,8 +25,10 @@ public class GameManager : MonoBehaviour
     private CinemachineVirtualCamera tableVCam;
 
     private bool isGamePaused = false;
+    private bool isGameOver = false;
 
     public UnityEvent<GameMode> GameModeChanged = new UnityEvent<GameMode>();
+    
     public bool IsGamePaused 
     {   get 
         {

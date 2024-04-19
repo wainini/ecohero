@@ -6,10 +6,7 @@ using UnityEngine;
 public class AlmanacScript : MonoBehaviour
 {
     // Start is called before the first frame update
-
-    [SerializeField]
-    private GameObject almanacPanel;
-
+    
     [SerializeField]
     private GameObject almanacButtonContainer;
 
@@ -24,7 +21,6 @@ public class AlmanacScript : MonoBehaviour
     void Start()
     {
         canvas = GetComponent<Canvas>();
-        GameManager.Instance.GameModeChanged.AddListener(SetCanvas);
         SpawnAlmanacButton();
     }
 
@@ -65,22 +61,6 @@ public class AlmanacScript : MonoBehaviour
             AlmanacButton almanacButton = gameObject.GetComponent<AlmanacButton>();
             almanacButton.SetItemData(item, isEnabled);
             almanacButton.onClickEvent.AddListener(almanacDetail.SetUIFromData);
-        }
-    }
-    public void ToggleAlmanac()
-    {
-        almanacPanel.SetActive(!almanacPanel.activeSelf);
-    }
-
-    public void SetCanvas(GameMode gameMode)
-    {
-        if (gameMode == GameMode.SeperateTrash)
-        {
-            canvas.enabled = true;
-        }
-        else
-        {
-            canvas.enabled = false;
         }
     }
 }

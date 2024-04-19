@@ -35,7 +35,8 @@ public class MenuManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-
+        CloseAllMenu();
+        Time.timeScale = 1.0f;
     }
     private Menu GetMenu(string name)
     {
@@ -71,7 +72,6 @@ public class MenuManager : MonoBehaviour
     public void OpenMenuOverlap(string name)
     {
         Menu menu = GetMenu(name);
-
         if (menu is null)
         {
             Debug.LogWarning($"Couldn't find [{name}] in the Menu List");
@@ -115,10 +115,12 @@ public class MenuManager : MonoBehaviour
     {
         if (menuStack.TryPeek(out Menu result) && result.PauseWhenOpen)
         {
+            Time.timeScale = 0;
             //pause
         }
         else
         {
+            Time.timeScale = 1;
             //unpause
         }
     }

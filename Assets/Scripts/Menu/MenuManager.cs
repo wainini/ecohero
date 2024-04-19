@@ -115,12 +115,12 @@ public class MenuManager : MonoBehaviour
     {
         if (menuStack.TryPeek(out Menu result) && result.PauseWhenOpen)
         {
-            Time.timeScale = 0;
+            GameManager.Instance.IsGamePaused = true;
             //pause
         }
         else
         {
-            Time.timeScale = 1;
+            GameManager.Instance.IsGamePaused = false;
             //unpause
         }
     }

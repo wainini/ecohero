@@ -18,6 +18,7 @@ public class GameOverCanvas : MonoBehaviour
 
     private void ShowGameOverScreen()
     {
+        GameManager.Instance.IsGamePaused = true;
         scoreText.text = "Score : " + LevelManager.Instance.CurrentScore;
         canvas.enabled = true;
     }

@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
         set 
         {
             isGamePaused = value;
+            Time.timeScale = value ? 0 : 1;
         } 
     }
 

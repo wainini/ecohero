@@ -30,9 +30,17 @@ public class PickableItem : MonoBehaviour, IInteractables
     {
         if(actor.TryGetComponent(out Player player))
         {
-            OnPickUp?.Invoke(this);
-            player.AddItem(this);
-            Destroy(this.gameObject);
+            if (player.IsInventoryFull)
+            {
+                Debug.Log("Player Inventory Full");
+                //show animation would be POGGERS
+            }
+            else
+            {
+                OnPickUp?.Invoke(this);
+                player.AddItem(this);
+                Destroy(this.gameObject);
+            }
         }
     }
 }

@@ -12,3 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ab76888d8206f4eab72e6e443b3b08, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
+  TrashPool:
+  - Trash: {fileID: 39098218994220266, guid: 874db58953b0cfd428ee3eeda99660b6, type: 3}
+    <SpawnChanceWeight>k__BackingField: 0.2
+  - Trash: {fileID: 237332281413908127, guid: d1478590ef0c0a44bb0ec9f001236105, type: 3}
+    <SpawnChanceWeight>k__BackingField: 0.5
+  - Trash: {fileID: 7741637294603562989, guid: 4a9c85d6667fe194a9bda23207b9a816, type: 3}
+    <SpawnChanceWeight>k__BackingField: 0.4

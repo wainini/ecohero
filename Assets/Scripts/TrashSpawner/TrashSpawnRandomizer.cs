@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrashSpawner : MonoBehaviour
+public class TrashSpawnRandomizer : MonoBehaviour
 {
     [SerializeField] private LevelDataSO levelDataSO;
-    [SerializeField] private Collider2D spawnCollider;
+    [SerializeField] private Collider2D spawnAreaCollider;
     [SerializeField] private LayerMask layerTrashCantSpawnOn;
     [Tooltip("Determine the Sprite Size of the trash. Is used to make sure the sprite doesn't go into walls and objects")] 
     [SerializeField] private float trashCircleSize = 1.5f;
 
-    public void SpawnRandomTrash()
+    public PickableItem SpawnRandomTrash()
     {
         PickableItem trashToSpawn = GetRandomTrashFromPool();
         Vector2 randomPosition = GetRandomSpawnPos();
 
-        Instantiate(trashToSpawn, randomPosition, Quaternion.identity);    
+        return Instantiate(trashToSpawn, randomPosition, Quaternion.identity);    
     }
 
     private PickableItem GetRandomTrashFromPool()
@@ -82,12 +82,12 @@ public class TrashSpawner : MonoBehaviour
 
     private Vector2 GetRandomPositionInCollider()
     {
-        Bounds bounds = spawnCollider.bounds;
+        Bounds bounds = spawnAreaCollider.bounds;
 
         Vector2 minBounds = new Vector2(bounds.min.x, bounds.min.y);
         Vector2 maxBounds = new Vector2(bounds.max.x, bounds.max.y);
 
-        float randomX = Random.RandomRange(minBounds.x, maxBounds.x);
+        float randomX = Random.Range(minBounds.x, maxBounds.x);
         float randomY = Random.Range(minBounds.y, maxBounds.y);
 
         return new Vector2(randomX, randomY);

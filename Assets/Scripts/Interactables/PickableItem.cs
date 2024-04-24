@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class PickableItem : MonoBehaviour, IInteractables
 {
+    public Action<PickableItem> OnPickUp;
+
     [SerializeField] private Sprite itemSprite;
 
     public Sprite ItemSprite { get { return itemSprite; }}
@@ -27,7 +30,9 @@ public class PickableItem : MonoBehaviour, IInteractables
     {
         if(actor.TryGetComponent(out Player player))
         {
+            OnPickUp?.Invoke(this);
             player.AddItem(this);
+            Destroy(this.gameObject);
         }
     }
 }

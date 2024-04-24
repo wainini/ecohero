@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7330603825992924033, guid: a8336b321d8bf314f81d503cee3b81c6, type: 3}
       propertyPath: m_Name
-      value: Box Variant
+      value: BoxPickable Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

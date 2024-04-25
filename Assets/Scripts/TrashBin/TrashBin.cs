@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,12 +18,13 @@ public class TrashBin : MonoBehaviour, IDropHandler
 
     private void ProcessTrash(DragableItemData data)
     {
-        if(data.Type != binType)
+        if(data?.Type != binType)
         {
             Debug.Log("Salah bang");
             return;
         }
 
+        LevelManager.Instance.CurrentScore += Convert.ToInt32(data.Score);
         Debug.Log($"Gokil, kamu dapat {data.Score} dari sampah {data.Name}");
     }
 }

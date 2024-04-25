@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     private bool isGamePaused = false;
 
     public UnityEvent<GameMode> GameModeChanged = new UnityEvent<GameMode>();
+    
     public bool IsGamePaused 
     {   get 
         {
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
         set 
         {
             isGamePaused = value;
+            Time.timeScale = value ? 0 : 1;
         } 
     }
 
@@ -51,8 +53,11 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
         }
+    }
 
-
+    public void Update()
+    {
+        
     }
 
     private void OnEnable()
@@ -77,6 +82,11 @@ public class GameManager : MonoBehaviour
             FindCameras();
             EnterCollectTrashMode();
         }
+    }
+
+    public void ChangeScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 
     private void FindCameras()

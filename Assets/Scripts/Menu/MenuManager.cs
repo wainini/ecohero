@@ -23,6 +23,26 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        // kalau back / esc
+        CheckBackInput();
+    }
+    private void CheckBackInput()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            if (menuStack.Count > 0)
+            {
+                CloseMenu();
+            }
+            else if (GameManager.Instance.GameMode != GameMode.NotInGame)
+            {
+                OpenMenu("PauseMenu");
+            }
+
+        }
+    }
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -35,7 +55,8 @@ public class MenuManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-
+        CloseAllMenu();
+        Time.timeScale = 1.0f;
     }
     private Menu GetMenu(string name)
     {
@@ -71,7 +92,6 @@ public class MenuManager : MonoBehaviour
     public void OpenMenuOverlap(string name)
     {
         Menu menu = GetMenu(name);
-
         if (menu is null)
         {
             Debug.LogWarning($"Couldn't find [{name}] in the Menu List");
@@ -115,10 +135,12 @@ public class MenuManager : MonoBehaviour
     {
         if (menuStack.TryPeek(out Menu result) && result.PauseWhenOpen)
         {
+            GameManager.Instance.IsGamePaused = true;
             //pause
         }
         else
         {
+            GameManager.Instance.IsGamePaused = false;
             //unpause
         }
     }

@@ -48,7 +48,7 @@ public class DragableItem : MonoBehaviour, IDragHandler, IEndDragHandler, IIniti
 
     public virtual void OnDrag(PointerEventData eventData)
     {
-        transform.position = mainCam.ScreenToWorldPoint(eventData.position) - offset + new Vector3(0, 0, 0);
+        transform.position = mainCam.ScreenToWorldPoint(eventData.position) - offset + new Vector3(0, 0, 10);
         DisableCollider();
     }
 

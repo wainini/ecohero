@@ -1417,7 +1417,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 440103602}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DetectPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2563,6 +2563,75 @@ Canvas:
   m_CorrespondingSourceObject: {fileID: 3687368200853739129, guid: a7338d29ca39be44d9e6482d4ca99bc4, type: 3}
   m_PrefabInstance: {fileID: 1536126866504834648}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1201840696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1201840699}
+  - component: {fileID: 1201840698}
+  - component: {fileID: 1201840697}
+  m_Layer: 0
+  m_Name: TrashSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1201840697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201840696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38c653fccf356d04c84263dd22ab66e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelDataSO: {fileID: 11400000, guid: b67ed508e669d4b4b95c8c81bc988053, type: 2}
+  spawnAreaCollider: {fileID: 828880866}
+  layerTrashCantSpawnOn:
+    serializedVersion: 2
+    m_Bits: 448
+  trashCircleSize: 1.5
+--- !u!114 &1201840698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201840696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc3f9bd1e47d2f42a0766126e8acc7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trashRandomizer: {fileID: 1201840697}
+  spawnMode: 0
+  trashToSpawnOnStart: 3
+  maxTrash: 5
+  spawnCooldown: 2
+--- !u!4 &1201840699
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201840696}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 828880865}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1248835792
 GameObject:
   m_ObjectHideFlags: 0
@@ -4358,7 +4427,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1902937063}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerInteraction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4752,7 +4821,7 @@ GameObject:
   - component: {fileID: 2011711716}
   - component: {fileID: 2011711715}
   - component: {fileID: 2011711719}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5468,7 +5537,6 @@ SceneRoots:
   - {fileID: 1968176639}
   - {fileID: 1261350960}
   - {fileID: 1028146998}
-  - {fileID: 2646518555600311605}
   - {fileID: 294518531}
   - {fileID: 1079091581}
   - {fileID: 1746642304}

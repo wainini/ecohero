@@ -12,8 +12,30 @@ public partial class Player
     [SerializeField] private bool showArea = true;
     [SerializeField] private bool showNearest = true;
 
-    //private List<IInteractables> interactablesInArea = new();
     private IInteractables nearestInteractable;
+    private IInteractables NearestInteractable
+    {
+        get
+        {
+            return nearestInteractable;
+        }
+        set
+        {
+            if(nearestInteractable == null)
+            {
+                nearestInteractable = value;
+            }
+            else if(nearestInteractable != value)
+            {
+                nearestInteractable.RemoveHighlight();
+                nearestInteractable = value;
+            }
+            if(value != null)
+            {
+                value.ToggleHighlight();
+            }
+        }
+    }
 
     private void SearchInteractables()
     {
@@ -26,7 +48,8 @@ public partial class Player
 
             if (c.TryGetComponent(out IInteractables interactable) && distance < nearestInteractableDistance)
             {
-                nearestInteractable = interactable;
+                NearestInteractable = interactable;
+                interactable.ToggleHighlight();
                 nearestInteractableDistance = distance;
             }
         }
@@ -34,7 +57,7 @@ public partial class Player
         //There's no interactables in area
         if(nearestInteractableDistance == float.MaxValue)
         {
-            nearestInteractable = null;
+            NearestInteractable = null;
         }
     }
 
@@ -47,10 +70,10 @@ public partial class Player
             Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(detectPoint.position, areaSize);
         }
-        if(showNearest && nearestInteractable != null)
+        if(showNearest && NearestInteractable != null)
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawLine(detectPoint.position, nearestInteractable.GetGameObject().transform.position);
+            Gizmos.DrawLine(detectPoint.position, NearestInteractable.GetGameObject().transform.position);
         }
     }
     #endif

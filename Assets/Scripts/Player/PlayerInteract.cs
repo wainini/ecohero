@@ -6,8 +6,8 @@ public partial class Player
 {
     public void InteractWithNearest()
     {
-        if (nearestInteractable is null) return;
-        nearestInteractable.Interact(this.gameObject);
+        if (NearestInteractable is null) return;
+        NearestInteractable.Interact(this.gameObject);
     }
 
     public void DropItem()

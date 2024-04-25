@@ -13,6 +13,8 @@ public partial class Player : MonoBehaviour
 
     public List<PickableItem> Inventory { get { return inventory; } }
 
+    public bool IsInventoryFull => inventory.Count >= playerInventorySlot;
+
     private void Update()
     {
         MovePlayer();

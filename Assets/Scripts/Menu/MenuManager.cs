@@ -23,6 +23,26 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        // kalau back / esc
+        CheckBackInput();
+    }
+    private void CheckBackInput()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            if (menuStack.Count > 0)
+            {
+                CloseMenu();
+            }
+            else if (GameManager.Instance.GameMode != GameMode.NotInGame)
+            {
+                OpenMenu("PauseMenu");
+            }
+
+        }
+    }
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;

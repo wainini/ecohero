@@ -13,7 +13,6 @@ public class Table : MonoBehaviour, IInteractables
     }
     public void ToggleHighlight()
     {
-        print("yey");
         GetComponent<SpriteRenderer>().material = highlightMat;
     }
 
@@ -24,7 +23,7 @@ public class Table : MonoBehaviour, IInteractables
 
     public void Interact(GameObject actor)
     {
-        GameManager.Instance.ChangeGameMode(GameMode.SeperateTrash);
+        GameManager.Instance.EnterSeperateTrashMode();
     }
 
     private void Awake()

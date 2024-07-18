@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Instance = this;
+            this.GameModeChanged.AddListener(OnGameModeChanged);
             DontDestroyOnLoad(this.gameObject);
         }
     }
@@ -127,6 +128,22 @@ public class GameManager : MonoBehaviour
         this.GameModeChanged.Invoke(this.gameMode);
     }
 
+    public void OnGameModeChanged(GameMode gameMode)
+    {
+        if (gameMode == GameMode.SeperateTrash)
+        {
+            playerVCam.enabled = false;
+            tableVCam.enabled = true;
+            SetCursorVisible(true);
+        }
+        else if (gameMode == GameMode.CollectTrash)
+        {
+            playerVCam.enabled = true;
+            tableVCam.enabled = false;
+            SetCursorVisible(false);
+        }
+    }
+
     private void SetCursorVisible(bool visible)
     {
         Cursor.visible = visible;
@@ -145,18 +162,12 @@ public class GameManager : MonoBehaviour
     public void EnterSeperateTrashMode()
     {
         ChangeGameMode(GameMode.SeperateTrash);
-        playerVCam.enabled = false;
-        tableVCam.enabled = true;
-        SetCursorVisible(true);
     }
 
     [ContextMenu("EnterCollectTrash")]
     public void EnterCollectTrashMode()
     {
         ChangeGameMode(GameMode.CollectTrash);
-        playerVCam.enabled = true;
-        tableVCam.enabled = false;
-        SetCursorVisible(false);
     }
 #endif
 }

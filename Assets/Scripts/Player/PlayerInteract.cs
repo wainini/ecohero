@@ -6,6 +6,7 @@ public partial class Player
 {
     public void InteractWithNearest()
     {
+        print(NearestInteractable);
         if (NearestInteractable is null) return;
         NearestInteractable.Interact(this.gameObject);
     }

@@ -13,11 +13,13 @@ public class GameCanvas : MonoBehaviour
     private TextMeshProUGUI labelScore;
     [SerializeField]
     private TextMeshProUGUI labelTime;
+    [SerializeField]
+    private GameObject backButton;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.Instance.GameModeChanged.AddListener(SetActiveAlmanacToggleButton);
+        GameManager.Instance.GameModeChanged.AddListener(SetActiveSeperateTrashButton);
         LevelManager.Instance.ScoreChanged.AddListener(SetScoreUI);
     }
 
@@ -40,15 +42,17 @@ public class GameCanvas : MonoBehaviour
         MenuManager.Instance.OpenMenuOverlap("PauseMenu");
     }
 
-    public void SetActiveAlmanacToggleButton(GameMode gameMode)
+    public void SetActiveSeperateTrashButton(GameMode gameMode)
     {
         if (gameMode == GameMode.SeperateTrash)
         {
             almanacToggleButton.SetActive(true);
+            backButton.SetActive(true);
         }
         else
         {
             almanacToggleButton.SetActive(false);
+            backButton.SetActive(false);
         }
     }
 }

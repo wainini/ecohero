@@ -70,6 +70,7 @@ public class InventorySlot : MonoBehaviour, IPointerDownHandler, IDragHandler, I
         //instantiate the dragable version of the item
         dragableItem = Instantiate(item.Dragable, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity, dragableParent);
         dragableItem.Pickable = item;
+        dragableItem.ToggleHighlight();
         //so it's in front of camera
         dragableItem.transform.position += new Vector3(0, 0, 10);
 

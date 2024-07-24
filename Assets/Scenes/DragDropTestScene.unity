@@ -998,6 +998,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d9e72e9ea776524cb385a5ebf033799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sr: {fileID: 0}
+  highlightMat: {fileID: 0}
   data: {fileID: 11400000, guid: 38425133155373447a6c7cda6b14fcd0, type: 2}
   pickable: {fileID: 0}
   dragablesInside:

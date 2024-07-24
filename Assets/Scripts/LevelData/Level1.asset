@@ -19,5 +19,3 @@ MonoBehaviour:
     <SpawnChanceWeight>k__BackingField: 0.5
   - Trash: {fileID: 7741637294603562989, guid: 4a9c85d6667fe194a9bda23207b9a816, type: 3}
     <SpawnChanceWeight>k__BackingField: 0.4
-  - Trash: {fileID: 5640198504584767472, guid: 57234e3b888df6444929e9caf7bef49f, type: 3}
-    <SpawnChanceWeight>k__BackingField: 0.4

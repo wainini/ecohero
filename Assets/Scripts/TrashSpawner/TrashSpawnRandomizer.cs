@@ -15,7 +15,7 @@ public class TrashSpawnRandomizer : MonoBehaviour
         PickableItem trashToSpawn = GetRandomTrashFromPool();
         Vector2 randomPosition = GetRandomSpawnPos();
 
-        return Instantiate(trashToSpawn, randomPosition, Quaternion.identity);    
+        return Instantiate(trashToSpawn, randomPosition, Quaternion.identity, this.transform);    
     }
 
     private PickableItem GetRandomTrashFromPool()

@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class PickableItem : MonoBehaviour, IInteractables
 {
+    [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Material highlightMat;
     private Material defaultMat;
 
@@ -22,7 +23,7 @@ public class PickableItem : MonoBehaviour, IInteractables
 
     private void Awake()
     {
-        defaultMat = GetComponent<SpriteRenderer>().material;
+        defaultMat = sr.material;
     }
 
     public GameObject GetGameObject()
@@ -50,11 +51,11 @@ public class PickableItem : MonoBehaviour, IInteractables
 
     public void ToggleHighlight()
     {
-        GetComponent<SpriteRenderer>().material = highlightMat;
+        sr.material = highlightMat;
     }
 
     public void RemoveHighlight()
     {
-        GetComponent<SpriteRenderer>().material = defaultMat;
+        sr.material = defaultMat;
     }
 }

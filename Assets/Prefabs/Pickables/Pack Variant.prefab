@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2946802752194357889
+--- !u!1001 &7343132002111880174
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,32 +9,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 734573033926588924, guid: a8336b321d8bf314f81d503cee3b81c6, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 53496fe0bbb67dc459af0173cd894184, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 734573033926588924, guid: a8336b321d8bf314f81d503cee3b81c6, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 734573033926588924, guid: a8336b321d8bf314f81d503cee3b81c6, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3147463146736229406, guid: a8336b321d8bf314f81d503cee3b81c6, type: 3}
-      propertyPath: itemSprite
+      propertyPath: dragable
       value: 
-      objectReference: {fileID: 21300000, guid: 53496fe0bbb67dc459af0173cd894184, type: 3}
-    - target: {fileID: 3738298269093861593, guid: a8336b321d8bf314f81d503cee3b81c6, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 53496fe0bbb67dc459af0173cd894184, type: 3}
-    - target: {fileID: 6064624688209462565, guid: a8336b321d8bf314f81d503cee3b81c6, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.86
-      objectReference: {fileID: 0}
-    - target: {fileID: 6064624688209462565, guid: a8336b321d8bf314f81d503cee3b81c6, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.3275
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4790352182519913263, guid: 4f0ffabcf88a6fb4f94b1ea15f016f85, type: 3}
     - target: {fileID: 7083976423030488145, guid: a8336b321d8bf314f81d503cee3b81c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.53
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7083976423030488145, guid: a8336b321d8bf314f81d503cee3b81c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7083976423030488145, guid: a8336b321d8bf314f81d503cee3b81c6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -70,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7330603825992924033, guid: a8336b321d8bf314f81d503cee3b81c6, type: 3}
       propertyPath: m_Name
-      value: Gelas Variant
+      value: Pack Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

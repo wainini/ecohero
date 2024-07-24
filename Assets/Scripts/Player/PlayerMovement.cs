@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements.Experimental;
+using UnityEngine.Windows;
 
 public partial class Player
 {
@@ -24,12 +26,23 @@ public partial class Player
 
         Vector2 moveVector = moveDir * moveSpeed;
 
-        if (moveVector.x  != 0)
-        {
-            sr.flipX = moveVector.x < 0;
-        }
+        UpdateFlip(moveDir.x);
 
         animator.SetBool("IsWalking", moveVector != Vector2.zero);
         rb.velocity = moveVector;
+    }
+
+    public void UpdateFlip(float xInput)
+    {
+        if (xInput == 0) return;
+
+        if (xInput < 0)
+        {
+            rb.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+        }
+        if (xInput > 0)
+        {
+            rb.transform.rotation = Quaternion.Euler(Vector3.zero);
+        }
     }
 }

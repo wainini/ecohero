@@ -16,6 +16,6 @@ public enum TrashType
 {
     Organik,
     Anorganik,
-    Paper,
-    B3
+    B3,
+    Packable
 }

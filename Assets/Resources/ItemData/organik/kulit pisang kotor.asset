@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49c4c79e5819b441892a2b359b547c4, type: 3}
+  m_Name: kulit pisang kotor
+  m_EditorClassIdentifier: 
+  Name: Kulit pisang kotor
+  Type: 0
+  Score: 1
+  Description: 
+  Sprite: {fileID: 21300000, guid: 79ed41761c243234ea3fc494b36887dc, type: 3}

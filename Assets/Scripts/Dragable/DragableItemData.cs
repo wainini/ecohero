@@ -14,8 +14,8 @@ public class DragableItemData : ScriptableObject
 
 public enum TrashType
 {
-    Plastic,
-    Metal,
+    Organik,
+    Anorganik,
     Paper,
     B3
 }

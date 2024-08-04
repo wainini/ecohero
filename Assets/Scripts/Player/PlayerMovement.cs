@@ -13,7 +13,7 @@ public partial class Player
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private float moveSpeed = 1f;
-
+    [SerializeField] private PlayerInputHandler inputHandler;
     private void MovePlayer()
     {
         if (GameManager.Instance.GameMode != GameMode.CollectTrash)
@@ -21,9 +21,7 @@ public partial class Player
             animator.SetBool("IsWalking", false);
             return;
         }
-
-        Vector2 moveDir = InputManager.Instance.MoveInput.normalized;
-
+        Vector2 moveDir = inputHandler.MovementInput;
         Vector2 moveVector = moveDir * moveSpeed;
 
         UpdateFlip(moveDir.x);

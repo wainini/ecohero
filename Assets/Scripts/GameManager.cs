@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
         {
             playerVCam.enabled = true;
             tableVCam.enabled = false;
-            SetCursorVisible(false);
+            //SetCursorVisible(false);
         }
     }
 

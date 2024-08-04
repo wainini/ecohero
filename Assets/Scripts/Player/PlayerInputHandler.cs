@@ -10,7 +10,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void SetMovementInput(InputAction.CallbackContext ctx)
     {
-        MovementInput = ctx.ReadValue<Vector2>();
+        MovementInput = ctx.ReadValue<Vector2>().normalized;
     }
 
     public void SetInteractInput(InputAction.CallbackContext ctx)

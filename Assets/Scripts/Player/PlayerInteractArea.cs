@@ -13,33 +13,11 @@ public partial class Player
     [SerializeField] private bool showNearest = true;
 
     private IInteractables nearestInteractable;
-    private IInteractables NearestInteractable
-    {
-        get
-        {
-            return nearestInteractable;
-        }
-        set
-        {
-            if(nearestInteractable == null)
-            {
-                nearestInteractable = value;
-            }
-            else if(nearestInteractable != value)
-            {
-                nearestInteractable.RemoveHighlight();
-                nearestInteractable = value;
-            }
-            if(value != null)
-            {
-                value.ToggleHighlight();
-            }
-        }
-    }
 
     private void SearchInteractables()
     {
         float nearestInteractableDistance = float.MaxValue;
+        IInteractables nearestInteractable = null;
 
         Collider2D[] result = Physics2D.OverlapCircleAll(detectPoint.position, areaSize);
         foreach (Collider2D c in result)
@@ -48,16 +26,23 @@ public partial class Player
 
             if (c.TryGetComponent(out IInteractables interactable) && distance < nearestInteractableDistance)
             {
-                NearestInteractable = interactable;
-                interactable.ToggleHighlight();
+                nearestInteractable = interactable;
                 nearestInteractableDistance = distance;
             }
         }
+        ChangeNearestInteractable(nearestInteractable);
+    }
 
-        //There's no interactables in area
-        if(nearestInteractableDistance == float.MaxValue)
+    public void ChangeNearestInteractable(IInteractables newInteractable)
+    {
+        if(nearestInteractable as Object != null)
         {
-            NearestInteractable = null;
+            nearestInteractable.RemoveHighlight();
+        }
+        nearestInteractable = newInteractable;
+        if (nearestInteractable as Object != null)
+        {
+            nearestInteractable.ToggleHighlight();
         }
     }
 
@@ -70,10 +55,10 @@ public partial class Player
             Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(detectPoint.position, areaSize);
         }
-        if(showNearest && NearestInteractable != null)
+        if(showNearest && nearestInteractable as Object != null)
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawLine(detectPoint.position, NearestInteractable.GetGameObject().transform.position);
+            Gizmos.DrawLine(detectPoint.position, nearestInteractable.GetGameObject().transform.position);
         }
     }
     #endif

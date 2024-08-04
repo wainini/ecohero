@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AlmanacScript : MonoBehaviour
 {
     // Start is called before the first frame update
     
     [SerializeField]
-    private GameObject almanacButtonContainer;
+    private ScrollRect almanacButtonScrollRect;
 
     [SerializeField]
     private GameObject almanacButtonPrefab;
@@ -34,28 +35,10 @@ public class AlmanacScript : MonoBehaviour
 
         GameSaveData gameSaveData = SaveLoadManager.Instance.GetGameSaveData;
 
-        Vector2 containerSize = almanacButtonContainer.GetComponent<RectTransform>().rect.size;
         foreach (DragableItemData item in listItemData)
         {
-            GameObject gameObject = Instantiate(almanacButtonPrefab, almanacButtonContainer.transform);
-            Vector2 buttonSize = gameObject.GetComponent<RectTransform>().rect.size;
-
-            RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
-            // set pivot kiri atas biar gampang atur posisinya
-            rectTransform.pivot = Vector2.up;
-            rectTransform.localPosition = buttonPosition;
-
-            float new_x_position = buttonPosition.x + x_gap + buttonSize.x;
-
-            if (new_x_position <= containerSize.x - buttonSize.x)
-            {
-                buttonPosition.x = new_x_position;
-            }
-            else
-            {
-                buttonPosition.x = 0;
-                buttonPosition.y -= y_gap + buttonSize.y;
-            }            
+            GameObject gameObject = Instantiate(almanacButtonPrefab, almanacButtonScrollRect.content);
+       
             bool isEnabled = gameSaveData.ListUnlockedItem.Contains(item.Name);
 
             AlmanacButton almanacButton = gameObject.GetComponent<AlmanacButton>();

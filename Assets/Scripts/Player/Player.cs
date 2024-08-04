@@ -19,17 +19,22 @@ public partial class Player : MonoBehaviour
     {
         MovePlayer();
         SearchInteractables();
+        if (inputHandler.InteractInput)
+        {
+            InteractWithNearest();
+            inputHandler.InteractPerformed();
+        }
     }
 
     private void OnEnable()
     {
-        InputManager.Instance.OnInteractInput += InteractWithNearest;
+        //InputManager.Instance.OnInteractInput += InteractWithNearest;
         InputManager.Instance.OnDropInput += DropItem;
     }
 
     private void OnDisable()
     {
-        InputManager.Instance.OnInteractInput -= InteractWithNearest;
+        //InputManager.Instance.OnInteractInput -= InteractWithNearest;
         InputManager.Instance.OnDropInput -= DropItem;
     }
 

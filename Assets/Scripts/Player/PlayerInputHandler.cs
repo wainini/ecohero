@@ -24,4 +24,6 @@ public class PlayerInputHandler : MonoBehaviour
             InteractInput = false;  
         }
     }
+
+    public void InteractPerformed() => InteractInput = false;
 }

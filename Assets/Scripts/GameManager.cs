@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    [SerializeField] private Canvas mobileInputCanvas;
+
     private GameMode gameMode;
     
     public GameMode GameMode { get { return gameMode; } }
@@ -135,11 +137,19 @@ public class GameManager : MonoBehaviour
             playerVCam.enabled = false;
             tableVCam.enabled = true;
             SetCursorVisible(true);
+            if (mobileInputCanvas != null)
+            {
+                mobileInputCanvas.enabled = false;
+            }
         }
         else if (gameMode == GameMode.CollectTrash)
         {
             playerVCam.enabled = true;
             tableVCam.enabled = false;
+            if (mobileInputCanvas != null)
+            {
+                mobileInputCanvas.enabled = true;
+            }
             //SetCursorVisible(false);
         }
     }

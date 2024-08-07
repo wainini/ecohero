@@ -28,11 +28,6 @@ public class AlmanacScript : MonoBehaviour
     private void SpawnAlmanacButton()
     {
         DragableItemData[] listItemData = Resources.LoadAll<DragableItemData>("itemData");        
-        Vector2 buttonPosition = Vector2.zero;
-        
-        float x_gap = 30;
-        float y_gap = 30;
-
         GameSaveData gameSaveData = SaveLoadManager.Instance.GetGameSaveData;
 
         foreach (DragableItemData item in listItemData)

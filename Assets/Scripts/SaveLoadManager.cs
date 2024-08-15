@@ -90,6 +90,17 @@ public class SaveLoadManager : MonoBehaviour
         File.WriteAllText(gameDataPath + GameSaveDataFileName, gameDataJSON);
     }
 
+    public void AddUnlockedItemSaveData(string itemName)
+    {
+        if(gameSaveData == null)
+        {
+            gameSaveData = new();
+        }
+        if (gameSaveData.ListUnlockedItem.Contains(itemName)) return;
+
+        gameSaveData.ListUnlockedItem.Add(itemName);
+    }
+
     private void OnApplicationQuit()
     {
         SaveData();

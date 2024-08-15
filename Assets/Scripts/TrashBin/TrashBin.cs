@@ -23,7 +23,7 @@ public class TrashBin : MonoBehaviour, IDropHandler
             Debug.Log("Salah bang");
             return;
         }
-
+        SaveLoadManager.Instance.AddUnlockedItemSaveData(data.Name);
         LevelManager.Instance.CurrentScore += Convert.ToInt32(data.Score);
         Debug.Log($"Gokil, kamu dapat {data.Score} dari sampah {data.Name}");
     }

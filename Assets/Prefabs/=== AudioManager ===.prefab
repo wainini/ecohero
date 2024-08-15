@@ -44,8 +44,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc93529dfe2ae5b4992542864d78c91c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmSounds: []
-  sfxSounds: []
+  bgmSounds:
+  - Name: GameMusic
+    Clip: {fileID: 8300000, guid: 0d1f551531d14a24086d7275e0e8dcbc, type: 3}
+    Loop: 1
+    Volume: 1
+    Source: {fileID: 0}
+  - Name: MenuMusic
+    Clip: {fileID: 8300000, guid: 55fa34f462466e546a3b7f476898a92d, type: 3}
+    Loop: 1
+    Volume: 1
+    Source: {fileID: 0}
+  sfxSounds:
+  - Name: ButtonClick
+    Clip: {fileID: 8300000, guid: a03ae59979a7cf4408615fc539866a62, type: 3}
+    Loop: 0
+    Volume: 1
+    Source: {fileID: 0}
+  - Name: LoseSFX
+    Clip: {fileID: 8300000, guid: 30e1f275d3f643e46a7ddc3ba208882e, type: 3}
+    Loop: 0
+    Volume: 1
+    Source: {fileID: 0}
+  - Name: WinSFX
+    Clip: {fileID: 8300000, guid: 676191bcb2c281a42a9fa8c9806c472a, type: 3}
+    Loop: 0
+    Volume: 1
+    Source: {fileID: 0}
   audioMixer: {fileID: 24100000, guid: b18fd777c2c3158449c2ae6f7bba6155, type: 2}
   sfxGroup: {fileID: -6073253775559568778, guid: b18fd777c2c3158449c2ae6f7bba6155, type: 2}
   bgmGroup: {fileID: -2214368065409406236, guid: b18fd777c2c3158449c2ae6f7bba6155, type: 2}

@@ -26,10 +26,6 @@ public class AlmanacScript : MonoBehaviour
         SpawnAlmanacButton();
     }
 
-    private void OnEnable()
-    {
-        SaveLoadManager.Instance.OnItemUnlocked += UnlockAlmanacItem;
-    }
 
     private void OnDisable()
     {
@@ -46,6 +42,7 @@ public class AlmanacScript : MonoBehaviour
     {
         DragableItemData[] listItemData = Resources.LoadAll<DragableItemData>("itemData");        
         GameSaveData gameSaveData = SaveLoadManager.Instance.GetGameSaveData;
+        SaveLoadManager.Instance.OnItemUnlocked += UnlockAlmanacItem;
 
         foreach (DragableItemData item in listItemData)
         {

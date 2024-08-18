@@ -19,6 +19,8 @@ public class LevelManager : MonoBehaviour
         set { currentScore = value; ScoreChanged.Invoke(currentScore); }
     }
 
+    [field: SerializeField] public int TargetScore { get; private set; }
+
     public UnityEvent GameOverEvent = new UnityEvent();
 
     private bool isGameOver;
@@ -41,7 +43,7 @@ public class LevelManager : MonoBehaviour
     }
     private void Awake()
     {
-        if (Instance is not null)
+        if (Instance != null)
             Destroy(Instance.gameObject);
 
         Instance = this;

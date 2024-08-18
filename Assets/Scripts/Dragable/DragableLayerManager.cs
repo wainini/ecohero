@@ -15,7 +15,7 @@ public class DragableLayerManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance is not null)
+        if(Instance != null)
             Destroy(Instance.gameObject);
 
         Instance = this;

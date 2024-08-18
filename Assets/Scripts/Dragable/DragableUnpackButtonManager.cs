@@ -10,7 +10,7 @@ public class DragableUnpackButtonManager : MonoBehaviour, IPointerDownHandler, I
     private DragablePack dragablePackInFocus;
     private void Awake()
     {
-        if (Instance is not null)
+        if (Instance != null)
             Destroy(Instance.gameObject);
 
         Instance = this;

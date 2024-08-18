@@ -50,6 +50,7 @@ public class DragablePack : DragableItem, IPointerClickHandler
 
         foreach(DragableItem dragable in dragablesInside)
         {
+            dragable.gameObject.SetActive(true);
             dragable.EnableCollider();
             //organize every DragableItems inside the pack
             DragableLayerManager.Instance.SetOnTop(dragable);

@@ -145,5 +145,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 6507634512039166651}
   highlightMat: {fileID: 2100000, guid: 259d37b725418b5438dfef10f1d451eb, type: 2}
-  data: {fileID: 11400000, guid: 0a03055b8e213044fa37c8bd78bfa667, type: 2}
+  data: {fileID: 11400000, guid: d441e514b0ad347458fd194d0d87ffcd, type: 2}
   pickable: {fileID: 8854794951170816544, guid: cc067dc172ba307449cd06e8c0f71e36, type: 3}

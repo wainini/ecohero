@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e49c4c79e5819b441892a2b359b547c4, type: 3}
-  m_Name: handphone
+  m_Name: gelas kertas2
   m_EditorClassIdentifier: 
-  Name: Handphone
-  Type: 3
+  Name: Gelas kertas (stripped)
+  Type: 0
   Score: 1
   Description: 
-  Sprite: {fileID: 2112769954, guid: c7d3b91cc87b1874e8243a2fb5510818, type: 3}
+  Sprite: {fileID: -118551310, guid: 94999a72e7db14f41842e46874bc012d, type: 3}

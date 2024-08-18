@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,11 +17,29 @@ public class AlmanacScript : MonoBehaviour
     private AlmanacDetail almanacDetail;
 
     private Canvas canvas;
+
+    private Dictionary<string, AlmanacButton> itemNameToButtonComponent = new();
     
     void Start()
     {
         canvas = GetComponent<Canvas>();
         SpawnAlmanacButton();
+    }
+
+    private void OnEnable()
+    {
+        SaveLoadManager.Instance.OnItemUnlocked += UnlockAlmanacItem;
+    }
+
+    private void OnDisable()
+    {
+        SaveLoadManager.Instance.OnItemUnlocked -= UnlockAlmanacItem;
+    }
+
+    private void UnlockAlmanacItem(string itemName) 
+    {
+        var almanacButtonComponent = itemNameToButtonComponent[itemName];
+        almanacButtonComponent.SetEnabled(true);
     }
 
     private void SpawnAlmanacButton()
@@ -39,6 +56,8 @@ public class AlmanacScript : MonoBehaviour
             AlmanacButton almanacButton = gameObject.GetComponent<AlmanacButton>();
             almanacButton.SetItemData(item, isEnabled);
             almanacButton.onClickEvent.AddListener(almanacDetail.SetUIFromData);
+
+            itemNameToButtonComponent.Add(item.Name, almanacButton);
         }
     }
 }

@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class SaveLoadManager : MonoBehaviour
 {
+    public Action<string> OnItemUnlocked;
+
     private const string SettingsSaveDataFileName = "SettingsData.json";
     private const string GameSaveDataFileName = "GameData.json";
     public static SaveLoadManager Instance { get; private set; }
@@ -99,6 +101,8 @@ public class SaveLoadManager : MonoBehaviour
         if (gameSaveData.ListUnlockedItem.Contains(itemName)) return;
 
         gameSaveData.ListUnlockedItem.Add(itemName);
+
+        OnItemUnlocked?.Invoke(itemName);
     }
 
     private void OnApplicationQuit()

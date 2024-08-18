@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class AlmanacButton : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField] private Image buttonImage;
     public Image itemImage;
 
     private Button button;
@@ -35,11 +36,13 @@ public class AlmanacButton : MonoBehaviour
         if (isEnabled)
         {
             itemImage.color = Color.white;
+            buttonImage.color = Color.white;
             button.enabled = true;
         }
         else
         {
             itemImage.color = Color.gray;
+            buttonImage.color = Color.gray;
             button.enabled = false;
         }
     }

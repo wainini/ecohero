@@ -5,7 +5,18 @@ using UnityEngine.Events;
 
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager Instance;
+    private static LevelManager instance;
+    public static LevelManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<LevelManager>();
+            }
+            return instance;
+        }
+    }
     [SerializeField]
     private float maxTime;
 
@@ -41,13 +52,6 @@ public class LevelManager : MonoBehaviour
             }
         }
     }
-    private void Awake()
-    {
-        if (Instance != null)
-            Destroy(Instance.gameObject);
-
-        Instance = this;
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -68,5 +72,10 @@ public class LevelManager : MonoBehaviour
                 IsGameOver = true;
             }
         }
+    }
+
+    private void OnDisable()
+    {
+        instance = null;
     }
 }

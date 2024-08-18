@@ -26,17 +26,6 @@ public partial class Player : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        //InputManager.Instance.OnInteractInput += InteractWithNearest;
-        InputManager.Instance.OnDropInput += DropItem;
-    }
-
-    private void OnDisable()
-    {
-        //InputManager.Instance.OnInteractInput -= InteractWithNearest;
-        InputManager.Instance.OnDropInput -= DropItem;
-    }
 
     public void AddItem(PickableItem item)
     {

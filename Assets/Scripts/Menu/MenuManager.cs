@@ -6,22 +6,22 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    public static MenuManager Instance { get; private set; }
-    [SerializeField] private List<Menu> menuList = new();
-    private Stack<Menu> menuStack = new();
-
-    private void Awake()
+    private static MenuManager instance;
+    public static MenuManager Instance
     {
-        if (Instance is not null && Instance != this)
+        get
         {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            Instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            if (instance == null)
+            {
+                instance = FindObjectOfType<MenuManager>();
+                DontDestroyOnLoad(instance.gameObject);
+
+            }
+            return instance;
         }
     }
+    [SerializeField] private List<Menu> menuList = new();
+    private Stack<Menu> menuStack = new();
 
     private void Update()
     {
@@ -41,6 +41,13 @@ public class MenuManager : MonoBehaviour
                 OpenMenu("PauseMenu");
             }
 
+        }
+    }
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
         }
     }
     private void OnEnable()

@@ -3,14 +3,28 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SaveLoadManager : MonoBehaviour
 {
-    public Action<string> OnItemUnlocked;
+    public UnityEvent<string> OnItemUnlocked;
 
     private const string SettingsSaveDataFileName = "SettingsData.json";
     private const string GameSaveDataFileName = "GameData.json";
-    public static SaveLoadManager Instance { get; private set; }
+    private static SaveLoadManager instance;
+    public static SaveLoadManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<SaveLoadManager>();
+                DontDestroyOnLoad(instance.gameObject);
+
+            }
+            return instance;
+        }
+    }
 
     private SettingsSaveData settingsSaveData = null;
     public SettingsSaveData GetSettingsData { get { return settingsSaveData; } }
@@ -23,18 +37,10 @@ public class SaveLoadManager : MonoBehaviour
 
     private void Awake()
     {
-        #region Singleton
-        if (Instance != null && Instance != this)
+        if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
         }
-        else
-        {
-            Instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        #endregion
-
         settingsDataPath = Application.persistentDataPath + "/SettingsSaveData/";
         gameDataPath = Application.persistentDataPath + "/GameSaveData/";
 
@@ -103,6 +109,11 @@ public class SaveLoadManager : MonoBehaviour
         gameSaveData.ListUnlockedItem.Add(itemName);
 
         OnItemUnlocked?.Invoke(itemName);
+    }
+
+    private void OnDisable()
+    {
+        OnItemUnlocked.RemoveAllListeners();
     }
 
     private void OnApplicationQuit()

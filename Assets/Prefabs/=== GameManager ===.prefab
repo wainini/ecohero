@@ -10,9 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3911504378236499674}
   - component: {fileID: 5724142347913553687}
-  - component: {fileID: 5670569128649906878}
-  - component: {fileID: 4376381152757158702}
-  - component: {fileID: 4118437981925370201}
   m_Layer: 0
   m_Name: === GameManager ===
   m_TagString: Untagged
@@ -50,52 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mobileInputCanvas: {fileID: 2402048437459272024}
   GameModeChanged:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &5670569128649906878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952815784417380149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4a9c988ba667e24aaad89861a4b6321, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dragableSortingLayer: Dragables
---- !u!114 &4376381152757158702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952815784417380149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40785d98322f3fa4babac538b8fb573c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4118437981925370201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952815784417380149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b8dae8c36ba71e49a1c501db0b30a87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxTime: 60
-  currentTime: 0
-  ScoreChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  <TargetScore>k__BackingField: 1000
-  GameOverEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6973867976236815144

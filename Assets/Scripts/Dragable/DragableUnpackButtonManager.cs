@@ -5,16 +5,26 @@ using UnityEngine.EventSystems;
 
 public class DragableUnpackButtonManager : MonoBehaviour, IPointerDownHandler, IDragHandler
 {
-    public static DragableUnpackButtonManager Instance;
+    private static DragableUnpackButtonManager instance;
+    public static DragableUnpackButtonManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<DragableUnpackButtonManager>();
+            }
+            return instance;
+        }
+    }
     private List<DragablePack> dragablePacksInGame = new();
     private DragablePack dragablePackInFocus;
-    private void Awake()
-    {
-        if (Instance != null)
-            Destroy(Instance.gameObject);
 
-        Instance = this;
+    private void OnDisable()
+    {
+        instance = null;
     }
+
 
     public void AddDragablePack(DragablePack pack)
     {

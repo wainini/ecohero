@@ -5,20 +5,27 @@ using System.Linq;
 
 public class DragableLayerManager : MonoBehaviour
 {
-    public static DragableLayerManager Instance;
-
+    private static DragableLayerManager instance;
+    public static DragableLayerManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<DragableLayerManager>();
+            }
+            return instance;
+        }
+    }
     [SerializeField] private string dragableSortingLayer;
     private int currentSortingOrder = -30000;
 
     private List<DragableItem> allDragablesInGame = new();
     private Dictionary<DragableItem, SpriteRenderer> dragableSpriteRenderers = new();
 
-    private void Awake()
+    private void OnDisable()
     {
-        if(Instance != null)
-            Destroy(Instance.gameObject);
-
-        Instance = this;
+        instance = null;
     }
 
     public void AddDragable(DragableItem item)

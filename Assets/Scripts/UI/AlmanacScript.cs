@@ -27,11 +27,6 @@ public class AlmanacScript : MonoBehaviour
     }
 
 
-    private void OnDisable()
-    {
-        SaveLoadManager.Instance.OnItemUnlocked -= UnlockAlmanacItem;
-    }
-
     private void UnlockAlmanacItem(string itemName) 
     {
         var almanacButtonComponent = itemNameToButtonComponent[itemName];
@@ -42,7 +37,7 @@ public class AlmanacScript : MonoBehaviour
     {
         DragableItemData[] listItemData = Resources.LoadAll<DragableItemData>("itemData");        
         GameSaveData gameSaveData = SaveLoadManager.Instance.GetGameSaveData;
-        SaveLoadManager.Instance.OnItemUnlocked += UnlockAlmanacItem;
+        SaveLoadManager.Instance.OnItemUnlocked.AddListener(UnlockAlmanacItem);
 
         foreach (DragableItemData item in listItemData)
         {

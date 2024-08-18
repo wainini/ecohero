@@ -10,20 +10,29 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private AudioMixerGroup sfxGroup, bgmGroup;
 
-    public static AudioManager Instance { get; private set; }
+    private static AudioManager instance;
+    public static AudioManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<AudioManager>();
+                DontDestroyOnLoad(instance.gameObject);
+
+            }
+            return instance;
+        }
+    }
     private void Awake()
     {
-        if(Instance != null && Instance != this)
+
+        if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
         }
-        else
-        {
-            Instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-
-        foreach(Sound s in bgmSounds)
+        
+        foreach (Sound s in bgmSounds)
         {
             s.Source = gameObject.AddComponent<AudioSource>();
             s.Source.clip = s.Clip;

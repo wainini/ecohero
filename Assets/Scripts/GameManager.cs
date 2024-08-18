@@ -15,7 +15,19 @@ public enum GameMode
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    private static GameManager instance;
+    public static GameManager Instance 
+    { 
+        get
+        {
+            if(instance == null)
+            {
+                instance = FindObjectOfType<GameManager>();
+                DontDestroyOnLoad(instance.gameObject);
+            }
+            return instance;
+        } 
+    }
 
     [SerializeField] private Canvas mobileInputCanvas;
 
@@ -46,31 +58,22 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance != null && Instance != this)
+        if(instance != null && instance != this)
         {
             Destroy(this.gameObject);
         }
-        else
-        {
-            Instance = this;
-            this.GameModeChanged.AddListener(OnGameModeChanged);
-            DontDestroyOnLoad(this.gameObject);
-        }
-    }
-
-    public void Update()
-    {
-        
     }
 
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        GameModeChanged.AddListener(OnGameModeChanged);
     }
 
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
+        GameModeChanged.RemoveAllListeners();
     }
 
 

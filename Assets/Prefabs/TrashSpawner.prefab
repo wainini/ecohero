@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4708992790430725007}
   - component: {fileID: 5998545446053029769}
   - component: {fileID: 4453396014955006953}
+  - component: {fileID: 6469180027892293608}
   m_Layer: 0
   m_Name: TrashSpawner
   m_TagString: Untagged
@@ -64,12 +65,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c653fccf356d04c84263dd22ab66e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelDataSO: {fileID: 11400000, guid: b67ed508e669d4b4b95c8c81bc988053, type: 2}
+  levelDataSO: {fileID: 11400000, guid: 3bf490f86bae2154fa90b2fc05e55459, type: 2}
   spawnAreaCollider: {fileID: 698306250308869795}
   layerTrashCantSpawnOn:
     serializedVersion: 2
     m_Bits: 448
   trashCircleSize: 1.5
+--- !u!114 &6469180027892293608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2243616423572939465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b8dae8c36ba71e49a1c501db0b30a87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTime: 60
+  currentTime: 0
+  ScoreChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  <TargetScore>k__BackingField: 2000
+  GameOverEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3528069618889747032
 GameObject:
   m_ObjectHideFlags: 0

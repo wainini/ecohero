@@ -139,10 +139,10 @@ TextureImporter:
       name: B3_0
       rect:
         serializedVersion: 2
-        x: 418
-        y: 152
-        width: 92
-        height: 148
+        x: 408
+        y: 142
+        width: 112
+        height: 168
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,10 +160,10 @@ TextureImporter:
       name: B3_1
       rect:
         serializedVersion: 2
-        x: 557
-        y: 151
-        width: 92
-        height: 147
+        x: 547
+        y: 141
+        width: 112
+        height: 167
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +181,10 @@ TextureImporter:
       name: B3_2
       rect:
         serializedVersion: 2
-        x: 705
-        y: 159
-        width: 214
-        height: 176
+        x: 695
+        y: 149
+        width: 234
+        height: 196
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,10 +202,10 @@ TextureImporter:
       name: B3_3
       rect:
         serializedVersion: 2
-        x: 953
-        y: 158
-        width: 146
-        height: 431
+        x: 943
+        y: 148
+        width: 166
+        height: 451
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,10 +223,10 @@ TextureImporter:
       name: B3_4
       rect:
         serializedVersion: 2
-        x: 1158
-        y: 158
-        width: 146
-        height: 431
+        x: 1148
+        y: 148
+        width: 166
+        height: 451
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,10 +244,10 @@ TextureImporter:
       name: B3_5
       rect:
         serializedVersion: 2
-        x: 1369
-        y: 161
-        width: 176
-        height: 264
+        x: 1359
+        y: 151
+        width: 196
+        height: 284
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,10 +265,10 @@ TextureImporter:
       name: B3_6
       rect:
         serializedVersion: 2
-        x: 1608
-        y: 163
-        width: 176
-        height: 264
+        x: 1598
+        y: 153
+        width: 196
+        height: 284
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

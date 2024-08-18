@@ -139,10 +139,10 @@ TextureImporter:
       name: Plastic_0
       rect:
         serializedVersion: 2
-        x: 157
-        y: 675
-        width: 407
-        height: 323
+        x: 147
+        y: 665
+        width: 390
+        height: 343
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,10 +160,10 @@ TextureImporter:
       name: Plastic_1
       rect:
         serializedVersion: 2
-        x: 566
-        y: 571
-        width: 148
-        height: 214
+        x: 556
+        y: 561
+        width: 168
+        height: 234
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +181,10 @@ TextureImporter:
       name: Plastic_2
       rect:
         serializedVersion: 2
-        x: 794
-        y: 574
-        width: 127
-        height: 370
+        x: 784
+        y: 564
+        width: 147
+        height: 380
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,10 +202,10 @@ TextureImporter:
       name: Plastic_3
       rect:
         serializedVersion: 2
-        x: 135
-        y: 154
-        width: 375
-        height: 484
+        x: 125
+        y: 144
+        width: 395
+        height: 504
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,10 +223,10 @@ TextureImporter:
       name: Plastic_4
       rect:
         serializedVersion: 2
-        x: 551
-        y: 438
-        width: 162
-        height: 55
+        x: 541
+        y: 428
+        width: 182
+        height: 75
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,10 +244,10 @@ TextureImporter:
       name: Plastic_5
       rect:
         serializedVersion: 2
-        x: 891
-        y: 166
-        width: 118
-        height: 323
+        x: 881
+        y: 156
+        width: 138
+        height: 353
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,10 +265,10 @@ TextureImporter:
       name: Plastic_6
       rect:
         serializedVersion: 2
-        x: 535
-        y: 165
-        width: 110
-        height: 172
+        x: 525
+        y: 155
+        width: 130
+        height: 192
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,10 +286,10 @@ TextureImporter:
       name: Plastic_7
       rect:
         serializedVersion: 2
-        x: 703
-        y: 162
-        width: 129
-        height: 236
+        x: 693
+        y: 152
+        width: 149
+        height: 256
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,10 +307,10 @@ TextureImporter:
       name: Plastic_8
       rect:
         serializedVersion: 2
-        x: 1047
-        y: 169
-        width: 109
-        height: 224
+        x: 1037
+        y: 159
+        width: 129
+        height: 244
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

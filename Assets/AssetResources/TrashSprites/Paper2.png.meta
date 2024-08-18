@@ -139,10 +139,10 @@ TextureImporter:
       name: Paper2_0
       rect:
         serializedVersion: 2
-        x: 43
-        y: 62
-        width: 1187
-        height: 824
+        x: 33
+        y: 52
+        width: 1207
+        height: 844
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,10 +160,10 @@ TextureImporter:
       name: Paper2_1
       rect:
         serializedVersion: 2
-        x: 1340
-        y: 238
-        width: 399
-        height: 444
+        x: 1330
+        y: 228
+        width: 419
+        height: 464
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

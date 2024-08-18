@@ -139,10 +139,10 @@ TextureImporter:
       name: Organic_0
       rect:
         serializedVersion: 2
-        x: 277
-        y: 423
-        width: 301
-        height: 121
+        x: 267
+        y: 413
+        width: 321
+        height: 141
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,10 +160,10 @@ TextureImporter:
       name: Organic_1
       rect:
         serializedVersion: 2
-        x: 273
-        y: 288
-        width: 301
-        height: 121
+        x: 263
+        y: 282
+        width: 321
+        height: 137
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +181,10 @@ TextureImporter:
       name: Organic_2
       rect:
         serializedVersion: 2
-        x: 389
-        y: 167
-        width: 70
-        height: 116
+        x: 379
+        y: 157
+        width: 91
+        height: 136
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,10 +202,10 @@ TextureImporter:
       name: Organic_3
       rect:
         serializedVersion: 2
-        x: 492
-        y: 166
-        width: 70
-        height: 116
+        x: 482
+        y: 167
+        width: 91
+        height: 125
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,10 +223,10 @@ TextureImporter:
       name: Organic_4
       rect:
         serializedVersion: 2
-        x: 642
-        y: 64
-        width: 214
-        height: 108
+        x: 632
+        y: 54
+        width: 234
+        height: 128
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,10 +244,10 @@ TextureImporter:
       name: Organic_5
       rect:
         serializedVersion: 2
-        x: 267
-        y: 61
-        width: 164
-        height: 94
+        x: 257
+        y: 51
+        width: 184
+        height: 114
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,10 +265,10 @@ TextureImporter:
       name: Organic_6
       rect:
         serializedVersion: 2
-        x: 446
-        y: 72
-        width: 163
-        height: 94
+        x: 436
+        y: 62
+        width: 183
+        height: 105
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

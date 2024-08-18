@@ -152,10 +152,10 @@ TextureImporter:
       name: bungkus baterai_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 13
-        width: 193
-        height: 309
+        x: 6
+        y: 3
+        width: 213
+        height: 329
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

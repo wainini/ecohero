@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e49c4c79e5819b441892a2b359b547c4, type: 3}
   m_Name: gelas + tutup + sedotan
   m_EditorClassIdentifier: 
-  Name: Gelas + tutup + sedotan
+  Name: Glass with Lid and Straw
   Type: 3
   Score: 1
-  Description: 
+  Description: Consists of multiple type of trash. You need to seperate it first
   Sprite: {fileID: -1901921268, guid: 88b8a322206a64d4e9f8632f7c1c635b, type: 3}

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e49c4c79e5819b441892a2b359b547c4, type: 3}
   m_Name: bungkus gunting
   m_EditorClassIdentifier: 
-  Name: Bungkus gunting
+  Name: Scissor Pack
   Type: 3
   Score: 1
-  Description: 
+  Description: Consists of multiple type of trash. You need to seperate it first
   Sprite: {fileID: 1635892277, guid: e8a5eb0ae21c8694b9e736c26a64ffa6, type: 3}

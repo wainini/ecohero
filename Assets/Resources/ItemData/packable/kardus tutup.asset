@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e49c4c79e5819b441892a2b359b547c4, type: 3}
   m_Name: kardus tutup
   m_EditorClassIdentifier: 
-  Name: Kardus tutup
+  Name: Closed Cardboard Box
   Type: 3
   Score: 1
-  Description: 
+  Description: Consists of multiple type of trash. You need to seperate it first
   Sprite: {fileID: -892909334, guid: 94999a72e7db14f41842e46874bc012d, type: 3}

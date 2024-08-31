@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e49c4c79e5819b441892a2b359b547c4, type: 3}
   m_Name: bungkus baterai
   m_EditorClassIdentifier: 
-  Name: Bungkus baterai
+  Name: Battery Pack
   Type: 3
   Score: 1
-  Description: 
+  Description: Consists of multiple type of trash. You need to seperate it first
   Sprite: {fileID: -1187600215, guid: 9ac728fce0536f54499872276855b24b, type: 3}

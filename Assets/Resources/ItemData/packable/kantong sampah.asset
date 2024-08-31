@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e49c4c79e5819b441892a2b359b547c4, type: 3}
   m_Name: kantong sampah
   m_EditorClassIdentifier: 
-  Name: Kantong sampah
+  Name: Trash Bag
   Type: 3
   Score: 1
-  Description: 
+  Description: Consists of multiple type of trash. You need to seperate it first
   Sprite: {fileID: 573008173, guid: 0117fc3559963f14b95ee0f02a7d0852, type: 3}

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e49c4c79e5819b441892a2b359b547c4, type: 3}
   m_Name: gelas plastik
   m_EditorClassIdentifier: 
-  Name: Gelas plastik
+  Name: Plastic Cup
   Type: 1
-  Score: 1
-  Description: 
+  Score: 100
+  Description: Anorganic
   Sprite: {fileID: -586709490, guid: c111aaba8ac66804890b0159dee4a254, type: 3}

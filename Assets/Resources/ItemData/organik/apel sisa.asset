@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e49c4c79e5819b441892a2b359b547c4, type: 3}
   m_Name: apel sisa
   m_EditorClassIdentifier: 
-  Name: Apel sisa
+  Name: Apple Pit
   Type: 0
-  Score: 1
-  Description: 
+  Score: 100
+  Description: Organic
   Sprite: {fileID: 1147279206, guid: 04a17c3d1b6e5e943b4c0302515cb3b7, type: 3}

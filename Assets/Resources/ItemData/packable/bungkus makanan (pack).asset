@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e49c4c79e5819b441892a2b359b547c4, type: 3}
   m_Name: bungkus makanan (pack)
   m_EditorClassIdentifier: 
-  Name: Bungkus makanan (pack)
+  Name: Food Wrap
   Type: 3
   Score: 1
-  Description: 
+  Description: Consists of multiple type of trash. You need to seperate it first
   Sprite: {fileID: 2003428702, guid: 3788c4ecb4cab9c4cb82059a35dcccd0, type: 3}

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e49c4c79e5819b441892a2b359b547c4, type: 3}
   m_Name: baterai
   m_EditorClassIdentifier: 
-  Name: Baterai
-  Type: 3
-  Score: 1
-  Description: 
+  Name: Battery
+  Type: 2
+  Score: 100
+  Description: B3
   Sprite: {fileID: 576621119, guid: c7d3b91cc87b1874e8243a2fb5510818, type: 3}

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e49c4c79e5819b441892a2b359b547c4, type: 3}
   m_Name: gelas kertas2
   m_EditorClassIdentifier: 
-  Name: Gelas kertas (stripped)
+  Name: Colored Paper Glass
   Type: 0
-  Score: 1
-  Description: 
+  Score: 100
+  Description: Organic
   Sprite: {fileID: -118551310, guid: 94999a72e7db14f41842e46874bc012d, type: 3}

@@ -168,7 +168,7 @@ public class GameManager : MonoBehaviour
             }
             AudioManager.Instance.PlaySound("MenuMusic");
         }
-        else
+        else if(!AudioManager.Instance.IsSoundPlaying("GameMusic"))
         {
             if (AudioManager.Instance.IsSoundPlaying("MenuMusic"))
             {

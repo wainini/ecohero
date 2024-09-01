@@ -70,6 +70,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySound(string name)
     {
+
         Sound s = GetSound(name);
         if (s == null) return;
         s.Source.pitch = 1f;

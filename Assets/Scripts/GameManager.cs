@@ -135,6 +135,7 @@ public class GameManager : MonoBehaviour
 
     public void OnGameModeChanged(GameMode gameMode)
     {
+        PlayMusic(gameMode);
         if (gameMode == GameMode.SeperateTrash)
         {
             playerVCam.enabled = false;
@@ -154,6 +155,26 @@ public class GameManager : MonoBehaviour
                 mobileInputCanvas.enabled = true;
             }
             //SetCursorVisible(false);
+        }
+    }
+
+    private void PlayMusic(GameMode gameMode)
+    {
+        if(gameMode == GameMode.NotInGame)
+        {
+            if (AudioManager.Instance.IsSoundPlaying("GameMusic"))
+            {
+                AudioManager.Instance.StopSound("GameMusic");
+            }
+            AudioManager.Instance.PlaySound("MenuMusic");
+        }
+        else
+        {
+            if (AudioManager.Instance.IsSoundPlaying("MenuMusic"))
+            {
+                AudioManager.Instance.StopSound("MenuMusic");
+            }
+            AudioManager.Instance.PlaySound("GameMusic");
         }
     }
 

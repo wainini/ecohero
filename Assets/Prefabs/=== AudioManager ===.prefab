@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmSounds:
   - Name: GameMusic
-    Clip: {fileID: 8300000, guid: 0d1f551531d14a24086d7275e0e8dcbc, type: 3}
+    Clip: {fileID: 8300000, guid: 0e909963c70ba964aa5e29aa7039cf06, type: 3}
     Loop: 1
     Volume: 1
     Source: {fileID: 0}

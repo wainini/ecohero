@@ -26,6 +26,7 @@ public class GameOverCanvas : MonoBehaviour
 
     private void ShowGameOverScreen()
     {
+        AudioManager.Instance.StopSound("GameMusic");
         GameManager.Instance.IsGamePaused = true;
         playerScoreText.text = "Your Score : " + LevelManager.Instance.CurrentScore;
         targetScoreText.text = "Target Score : " + LevelManager.Instance.TargetScore;
@@ -34,6 +35,7 @@ public class GameOverCanvas : MonoBehaviour
 
         if(LevelManager.Instance.CurrentScore >= LevelManager.Instance.TargetScore)
         {
+            AudioManager.Instance.PlaySound("WinSFX");
             Debug.Log("hi");
             if(SceneManager.sceneCountInBuildSettings - 1 >= SceneManager.GetActiveScene().buildIndex + 1)
             {
@@ -49,6 +51,7 @@ public class GameOverCanvas : MonoBehaviour
         }
         else
         {
+            AudioManager.Instance.PlaySound("LoseSFX");
             nextLevelButton.gameObject.SetActive(false);
             retryButton.gameObject.SetActive(true);
         }

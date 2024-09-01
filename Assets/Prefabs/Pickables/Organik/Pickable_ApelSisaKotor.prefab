@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1024946844, guid: 04a17c3d1b6e5e943b4c0302515cb3b7, type: 3}
+  m_Sprite: {fileID: -2126308464, guid: 91e065930dde51a408b450fd4e506ef1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 3738298269093861593}
   highlightMat: {fileID: 2100000, guid: 259d37b725418b5438dfef10f1d451eb, type: 2}
-  itemSprite: {fileID: 1024946844, guid: 04a17c3d1b6e5e943b4c0302515cb3b7, type: 3}
+  itemSprite: {fileID: -2126308464, guid: 91e065930dde51a408b450fd4e506ef1, type: 3}
   dragable: {fileID: 2110184830514481124, guid: 4c337ec266d2c4a4a83aa6a6b2d559e2, type: 3}
 --- !u!1 &7798794513277820155
 GameObject:

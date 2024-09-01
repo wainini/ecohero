@@ -21,6 +21,7 @@ public class TrashBin : MonoBehaviour, IDropHandler
         if(data?.Type != binType)
         {
             Debug.Log("Salah bang");
+            LevelManager.Instance.CurrentScore -= Convert.ToInt32(50);
             return;
         }
         SaveLoadManager.Instance.AddUnlockedItemSaveData(data.Name);

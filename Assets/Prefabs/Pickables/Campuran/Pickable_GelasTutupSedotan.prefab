@@ -179,7 +179,7 @@ MonoBehaviour:
   sr: {fileID: 3738298269093861593}
   highlightMat: {fileID: 2100000, guid: 259d37b725418b5438dfef10f1d451eb, type: 2}
   itemSprite: {fileID: -1901921268, guid: 88b8a322206a64d4e9f8632f7c1c635b, type: 3}
-  dragable: {fileID: 0}
+  dragable: {fileID: 4790352182519913263, guid: 2717a11ae37817f4ea9a34d775873463, type: 3}
 --- !u!1 &7798794513277820155
 GameObject:
   m_ObjectHideFlags: 0

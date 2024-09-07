@@ -126,7 +126,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.875, y: 1.83}
+    oldSize: {x: 0.975, y: 1.93}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -149,7 +149,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 253117659643930024}
   highlightMat: {fileID: 2100000, guid: 259d37b725418b5438dfef10f1d451eb, type: 2}
-  data: {fileID: 11400000, guid: 47d16790b213eda47ab6b2c2cffb0399, type: 2}
   pickable: {fileID: 8854794951170816544, guid: d0031cc5cd583db498f8ab24633abf9e, type: 3}
   dragablesInside:
   - {fileID: 171694298602224062}

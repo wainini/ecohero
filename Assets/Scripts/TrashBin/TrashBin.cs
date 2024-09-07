@@ -11,7 +11,11 @@ public class TrashBin : MonoBehaviour, IDropHandler
     {
         if (eventData.pointerDrag.TryGetComponent(out DragableItem dragableItem))
         {
-            ProcessTrash(dragableItem.Data);
+            var datas = dragableItem.GetData();
+            foreach(var data in datas)
+            {
+                ProcessTrash(data);
+            }
             Destroy(eventData.pointerDrag);
         }   
     }

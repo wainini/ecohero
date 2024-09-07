@@ -1,16 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
-using static UnityEditor.Progress;
 
-
-public class DragableItem : MonoBehaviour, IDragHandler, IEndDragHandler, IInitializePotentialDragHandler, IPointerEnterHandler, IPointerExitHandler
+public abstract class DragableItem : MonoBehaviour, IDragHandler, IEndDragHandler, IInitializePotentialDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Material highlightMat;
-    [SerializeField] private DragableItemData data;
-    public DragableItemData Data { get { return data; } }
 
     [SerializeField] private PickableItem pickable;
     public PickableItem Pickable
@@ -21,7 +15,7 @@ public class DragableItem : MonoBehaviour, IDragHandler, IEndDragHandler, IIniti
         }
         set
         {
-            if(pickable is null) pickable = value;
+            if (pickable is null) pickable = value;
         }
     }
 
@@ -86,4 +80,6 @@ public class DragableItem : MonoBehaviour, IDragHandler, IEndDragHandler, IIniti
     {
         sr.material = defaultMat;
     }
+
+    public abstract DragableItemData[] GetData();
 }

@@ -56,7 +56,7 @@ public class InventorySlot : MonoBehaviour, IPointerDownHandler, IDragHandler, I
     public void OnDrop(PointerEventData eventData)
     {
         Debug.Log("Droped");
-        if(eventData.pointerDrag.TryGetComponent(out DragableItem dragableItem))
+        if(eventData.pointerDrag.TryGetComponent(out DragableItem_Single dragableItem))
         {
             inventoryUI.PlayerReference.AddItem(dragableItem.Pickable);
             Destroy(eventData.pointerDrag);

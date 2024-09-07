@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DragableItemPack : DragableItem
+public class DragableItemPack : DragableItem_Single
 {
 
 }

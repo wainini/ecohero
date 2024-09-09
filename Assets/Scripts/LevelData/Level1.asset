@@ -14,8 +14,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TrashPool:
   - Trash: {fileID: 8854794951170816544, guid: 2f8972d5ab0abd649ac3f470c7720db3, type: 3}
-    <SpawnChanceWeight>k__BackingField: 0.2
+    <SpawnChanceWeight>k__BackingField: 0.4
   - Trash: {fileID: 8854794951170816544, guid: 922acea000de7eb41889ba4cbed229dd, type: 3}
-    <SpawnChanceWeight>k__BackingField: 0.5
+    <SpawnChanceWeight>k__BackingField: 0.4
   - Trash: {fileID: 8854794951170816544, guid: fb4e5e119fab9a640841fc2c0491e575, type: 3}
+    <SpawnChanceWeight>k__BackingField: 0.4
+  - Trash: {fileID: 8854794951170816544, guid: cc067dc172ba307449cd06e8c0f71e36, type: 3}
+    <SpawnChanceWeight>k__BackingField: 0.4
+  - Trash: {fileID: 8854794951170816544, guid: b05adae086050294eac81c208749ee9b, type: 3}
+    <SpawnChanceWeight>k__BackingField: 0.4
+  - Trash: {fileID: 8854794951170816544, guid: 3ae20dbf506d1b849b34a40bfe137239, type: 3}
+    <SpawnChanceWeight>k__BackingField: 0.4
+  - Trash: {fileID: 8854794951170816544, guid: ffb41276641c15d4d92507e2b4065849, type: 3}
+    <SpawnChanceWeight>k__BackingField: 0.4
+  - Trash: {fileID: 8854794951170816544, guid: c66abfeb71dc0bb46969c6ee525fd9c9, type: 3}
+    <SpawnChanceWeight>k__BackingField: 0.4
+  - Trash: {fileID: 8854794951170816544, guid: 968f073487422bf4b999d1a46d1a51b5, type: 3}
+    <SpawnChanceWeight>k__BackingField: 0.4
+  - Trash: {fileID: 8854794951170816544, guid: 60e46cb4004580042a415d5e7d845ae8, type: 3}
+    <SpawnChanceWeight>k__BackingField: 0.4
+  - Trash: {fileID: 8854794951170816544, guid: ac1862caac3246948ba159a826fb3988, type: 3}
+    <SpawnChanceWeight>k__BackingField: 0.4
+  - Trash: {fileID: 8854794951170816544, guid: 147f067cf24a1d04a95993d6cf0bc726, type: 3}
+    <SpawnChanceWeight>k__BackingField: 0.4
+  - Trash: {fileID: 8854794951170816544, guid: f3eaf23735ab8054d98d102abea24894, type: 3}
+    <SpawnChanceWeight>k__BackingField: 0.4
+  - Trash: {fileID: 8854794951170816544, guid: 0ea4feb00eac533459326932b38f39a9, type: 3}
+    <SpawnChanceWeight>k__BackingField: 0.4
+  - Trash: {fileID: 8854794951170816544, guid: 91815e073aab7ff44935cef186779ee7, type: 3}
+    <SpawnChanceWeight>k__BackingField: 0.4
+  - Trash: {fileID: 8854794951170816544, guid: 398e1e9afe32a0a4aa1dc78bba98fa83, type: 3}
     <SpawnChanceWeight>k__BackingField: 0.4

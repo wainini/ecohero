@@ -36,7 +36,8 @@ public abstract class DragableItem : MonoBehaviour, IDragHandler, IEndDragHandle
 
     protected virtual void OnDestroy()
     {
-        DragableLayerManager.Instance.RemoveDragable(this);
+        if(DragableLayerManager.Instance != null)
+            DragableLayerManager.Instance.RemoveDragable(this);
     }
 
     public void OnInitializePotentialDrag(PointerEventData eventData)

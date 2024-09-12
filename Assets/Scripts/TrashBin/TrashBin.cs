@@ -4,9 +4,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class TrashBin : MonoBehaviour, IDropHandler
+public class TrashBin : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    [SerializeField] private SpriteRenderer sr;
+    [SerializeField] private Material highlightMat;
     [SerializeField] private TrashType binType;
+
+    private Material defaultMat;
+
+    private void Awake()
+    {
+        defaultMat = sr.material;
+    }
     public void OnDrop(PointerEventData eventData)
     {
         if (eventData.pointerDrag.TryGetComponent(out DragableItem dragableItem))
@@ -18,6 +27,32 @@ public class TrashBin : MonoBehaviour, IDropHandler
             }
             Destroy(eventData.pointerDrag);
         }   
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (eventData.pointerDrag != null && eventData.pointerDrag.TryGetComponent(out DragableItem dragableItem))
+        {
+            ToggleHighlight();
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if(sr.material != defaultMat)
+        {
+            RemoveHighlight();
+        }
+    }
+
+    public void ToggleHighlight()
+    {
+        sr.material = highlightMat;
+    }
+
+    public void RemoveHighlight()
+    {
+        sr.material = defaultMat;
     }
 
     private void ProcessTrash(DragableItemData data)

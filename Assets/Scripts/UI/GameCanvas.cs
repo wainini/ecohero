@@ -42,6 +42,11 @@ public class GameCanvas : MonoBehaviour
         MenuManager.Instance.OpenMenuOverlap("PauseMenu");
     }
 
+    public void BackToCollectTrash()
+    {
+        GameManager.Instance.EnterCollectTrashMode();
+    }
+
     public void SetActiveSeperateTrashButton(GameMode gameMode)
     {
         if (gameMode == GameMode.SeperateTrash)

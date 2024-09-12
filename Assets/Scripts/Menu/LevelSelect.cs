@@ -23,7 +23,6 @@ public class LevelSelect : MonoBehaviour
         yield return new WaitUntil(() => SaveLoadManager.Instance?.GetGameSaveData is not null);
 
         saveData = SaveLoadManager.Instance.GetGameSaveData; //save the reference to be access/changed everytime game data changed
-        int maxLevelCleared = saveData.ClearedLevelData.Count > 0 ? saveData.ClearedLevelData.Max(x => x.Level) : 0;
 
         for (int i = 0; i<levelButtonContainer.transform.childCount; i++)
         {
@@ -31,7 +30,7 @@ public class LevelSelect : MonoBehaviour
             if (levelButtonObject != null)
             {
                 LevelButton levelButton = levelButtonObject.GetComponent<LevelButton>();
-                levelButton.SetEnabled(maxLevelCleared);
+                levelButton.SetEnabled(true);
             }
         }
     }

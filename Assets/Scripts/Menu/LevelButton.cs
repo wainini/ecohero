@@ -24,10 +24,6 @@ public class LevelButton : MonoBehaviour
         GameManager.Instance.ChangeScene("Level" + Level);
     }
 
-    public void SetEnabled(int ClearedLevelData)
-    {
-        SetEnabled(ClearedLevelData + 1 >= Level);
-    }
     public void SetEnabled(bool IsEnabled)
     {
         this.IsEnabled = IsEnabled;

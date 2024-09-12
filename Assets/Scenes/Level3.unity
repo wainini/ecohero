@@ -1070,8 +1070,8 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 24.02579, y: 13.41778}
       - {x: -24.025795, y: 13.417784}
-      - {x: -24.02579, y: -13.41778}
-      - {x: 24.02579, y: -13.41778}
+      - {x: -24.02579, y: -13}
+      - {x: 24.02579, y: -13}
   m_UseDelaunayMesh: 0
 --- !u!4 &346613386
 Transform:
@@ -3406,7 +3406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4640929822182150477, guid: 895c1c1609ffcf34c90d124723ad5155, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -306044.75
+      value: -308475.88
       objectReference: {fileID: 0}
     - target: {fileID: 4675324396894791943, guid: 895c1c1609ffcf34c90d124723ad5155, type: 3}
       propertyPath: m_AnchorMax.y

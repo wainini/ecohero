@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        Screen.SetResolution(Screen.height * 16/9, Screen.height, FullScreenMode.FullScreenWindow);
     }
 
     private void OnEnable()
@@ -156,6 +157,13 @@ public class GameManager : MonoBehaviour
             }
             //SetCursorVisible(false);
         }
+        else if(gameMode == GameMode.NotInGame)
+        {
+            if (mobileInputCanvas != null)
+            {
+                mobileInputCanvas.enabled = false;
+            }
+        }
     }
 
     private void PlayMusic(GameMode gameMode)
@@ -191,17 +199,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-#if UNITY_EDITOR
-    [ContextMenu("EnterSeperateTrash")]
     public void EnterSeperateTrashMode()
     {
         ChangeGameMode(GameMode.SeperateTrash);
     }
 
-    [ContextMenu("EnterCollectTrash")]
     public void EnterCollectTrashMode()
     {
         ChangeGameMode(GameMode.CollectTrash);
     }
-#endif
 }

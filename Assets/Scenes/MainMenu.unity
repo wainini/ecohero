@@ -561,7 +561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4640929822182150477, guid: 895c1c1609ffcf34c90d124723ad5155, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -884841.3
+      value: -996154.7
       objectReference: {fileID: 0}
     - target: {fileID: 4675324396894791943, guid: 895c1c1609ffcf34c90d124723ad5155, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1306,7 +1306,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Eco Heroes
+  m_text: 'Eco Hero
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 264f1405e8e39d146aa7bb413031785f, type: 2}
   m_sharedMaterial: {fileID: 1078791890017273162, guid: 264f1405e8e39d146aa7bb413031785f, type: 2}

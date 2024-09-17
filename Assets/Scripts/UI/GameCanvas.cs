@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class GameCanvas : MonoBehaviour
 {
+    [SerializeField] private GameObject raycastOverlay;
+
+
     [SerializeField]
     private GameObject almanacToggleButton;
 
@@ -53,11 +56,13 @@ public class GameCanvas : MonoBehaviour
         {
             almanacToggleButton.SetActive(true);
             backButton.SetActive(true);
+            raycastOverlay.SetActive(false);    
         }
         else
         {
             almanacToggleButton.SetActive(false);
             backButton.SetActive(false);
+            raycastOverlay.SetActive(true);    
         }
     }
 }

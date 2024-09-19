@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: gunting
   m_EditorClassIdentifier: 
   Name: Scissor
-  Type: 1
+  Type: 2
   Score: 100
   Description: Anorganic
   Sprite: {fileID: 1092440435, guid: c111aaba8ac66804890b0159dee4a254, type: 3}

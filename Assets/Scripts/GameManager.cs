@@ -88,6 +88,7 @@ public class GameManager : MonoBehaviour
         {
             FindCameras();
             EnterCollectTrashMode();
+            isGamePaused = false;
         }
     }
 

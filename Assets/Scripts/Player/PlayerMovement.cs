@@ -18,6 +18,7 @@ public partial class Player
     {
         if (GameManager.Instance.GameMode != GameMode.CollectTrash)
         {
+            rb.velocity = Vector2.zero;
             animator.SetBool("IsWalking", false);
             return;
         }

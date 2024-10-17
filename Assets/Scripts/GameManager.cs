@@ -146,6 +146,7 @@ public class GameManager : MonoBehaviour
             if (mobileInputCanvas != null)
             {
                 mobileInputCanvas.enabled = false;
+                mobileInputCanvas.gameObject.SetActive(false);
             }
         }
         else if (gameMode == GameMode.CollectTrash)
@@ -155,6 +156,7 @@ public class GameManager : MonoBehaviour
             if (mobileInputCanvas != null)
             {
                 mobileInputCanvas.enabled = true;
+                mobileInputCanvas.gameObject.SetActive(true);
             }
             //SetCursorVisible(false);
         }
@@ -163,6 +165,8 @@ public class GameManager : MonoBehaviour
             if (mobileInputCanvas != null)
             {
                 mobileInputCanvas.enabled = false;
+                mobileInputCanvas.gameObject.SetActive(false);
+
             }
         }
     }

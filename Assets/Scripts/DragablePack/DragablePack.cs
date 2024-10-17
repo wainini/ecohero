@@ -71,7 +71,8 @@ public class DragablePack : DragableItem, IPointerClickHandler
     {
         base.OnDrag(eventData);
 
-        DisableUnpackButton();
+        DragableUnpackButtonManager.Instance.DisableAllDragableButton();
+        unpackButtonCanvas.enabled = true;
     }
 
     public override DragableItemData[] GetData()

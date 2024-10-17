@@ -9,6 +9,7 @@ public class TrashBin : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Material highlightMat;
     [SerializeField] private TrashType binType;
+    public GameObject scorePopUpPrefab;
 
     private Material defaultMat;
 
@@ -61,11 +62,21 @@ public class TrashBin : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
         {
             Debug.Log("Salah bang");
             LevelManager.Instance.CurrentScore -= Convert.ToInt32(50);
+            ShowPopUpScore(false);
             return;
         }
         SaveLoadManager.Instance.AddUnlockedItemSaveData(data.Name);
+        ShowPopUpScore(true);
 
         LevelManager.Instance.CurrentScore += Convert.ToInt32(data.Score);
         Debug.Log($"Gokil, kamu dapat {data.Score} dari sampah {data.Name}");
+    }
+
+    private void ShowPopUpScore(bool isCorrect)
+    {
+        GameObject gameObject = Instantiate(scorePopUpPrefab);
+        ScorePopUp scorePopUp = gameObject.GetComponent<ScorePopUp>();
+        scorePopUp.init(isCorrect);
+
     }
 }

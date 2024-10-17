@@ -146,6 +146,7 @@ MonoBehaviour:
   sr: {fileID: 154822853890690744}
   highlightMat: {fileID: 2100000, guid: 259d37b725418b5438dfef10f1d451eb, type: 2}
   binType: 2
+  scorePopUpPrefab: {fileID: 8316057426444080744, guid: 24947b56a3560694eb0542875c02b4ed, type: 3}
 --- !u!1 &1177064987233870117
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,6 +293,7 @@ MonoBehaviour:
   sr: {fileID: 2442662477122920260}
   highlightMat: {fileID: 2100000, guid: 259d37b725418b5438dfef10f1d451eb, type: 2}
   binType: 0
+  scorePopUpPrefab: {fileID: 8316057426444080744, guid: 24947b56a3560694eb0542875c02b4ed, type: 3}
 --- !u!1 &2029643844597506091
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,6 +524,7 @@ MonoBehaviour:
   sr: {fileID: 1521786441047081285}
   highlightMat: {fileID: 2100000, guid: 259d37b725418b5438dfef10f1d451eb, type: 2}
   binType: 1
+  scorePopUpPrefab: {fileID: 8316057426444080744, guid: 24947b56a3560694eb0542875c02b4ed, type: 3}
 --- !u!1 &7104526851560847588
 GameObject:
   m_ObjectHideFlags: 0

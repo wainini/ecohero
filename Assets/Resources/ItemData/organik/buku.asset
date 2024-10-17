@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: buku
   m_EditorClassIdentifier: 
   Name: Book
-  Type: 1
+  Type: 0
   Score: 100
   Description: Organic
   Sprite: {fileID: -312800119, guid: 94999a72e7db14f41842e46874bc012d, type: 3}

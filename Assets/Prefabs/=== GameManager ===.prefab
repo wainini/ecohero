@@ -299,6 +299,22 @@ PrefabInstance:
       propertyPath: m_MovementRange
       value: 128
       objectReference: {fileID: 0}
+    - target: {fileID: 7537227431467006201, guid: a40fa6afe2a9ae043ab98a398f161252, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537227431467006201, guid: a40fa6afe2a9ae043ab98a398f161252, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537227431467006201, guid: a40fa6afe2a9ae043ab98a398f161252, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537227431467006201, guid: a40fa6afe2a9ae043ab98a398f161252, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2091215810783374309, guid: a40fa6afe2a9ae043ab98a398f161252, type: 3}
     m_RemovedGameObjects: []

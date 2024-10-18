@@ -12,7 +12,7 @@ public class ScorePopUp : MonoBehaviour
 
     private float timer = 2f;
 
-    public void init(bool isCorrect)
+    public void init(bool isCorrect, string message = "")
     {
         if (isCorrect)
         {
@@ -23,6 +23,11 @@ public class ScorePopUp : MonoBehaviour
         {
             popUpText.text = "-50";
             popUpText.color = Color.red;
+        }
+
+        if (!string.IsNullOrEmpty(message))
+        {
+            popUpText.text = message;
         }
         ShowPopUp();
         

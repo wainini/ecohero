@@ -21,6 +21,12 @@ public class TrashBin : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
     {
         if (eventData.pointerDrag.TryGetComponent(out DragableItem dragableItem))
         {
+            if (eventData.pointerDrag.TryGetComponent(out DragablePack pack))
+            {
+                ShowPopUpScore(false, "Unpack The Trash First !");
+                return;
+            }
+              
             var datas = dragableItem.GetData();
             foreach(var data in datas)
             {
@@ -72,11 +78,10 @@ public class TrashBin : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
         Debug.Log($"Gokil, kamu dapat {data.Score} dari sampah {data.Name}");
     }
 
-    private void ShowPopUpScore(bool isCorrect)
+    private void ShowPopUpScore(bool isCorrect, string message = "")
     {
         GameObject gameObject = Instantiate(scorePopUpPrefab);
         ScorePopUp scorePopUp = gameObject.GetComponent<ScorePopUp>();
-        scorePopUp.init(isCorrect);
-
+        scorePopUp.init(isCorrect, message);
     }
 }

@@ -2361,6 +2361,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: === GameManager ===
       objectReference: {fileID: 0}
+    - target: {fileID: 3710350012171108137, guid: ec624ce95ecc320439ef6689b956c248, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3911504378236499674, guid: ec624ce95ecc320439ef6689b956c248, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3483,7 +3487,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4640929822182150477, guid: 895c1c1609ffcf34c90d124723ad5155, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -317744
+      value: -745374.6
       objectReference: {fileID: 0}
     - target: {fileID: 4675324396894791943, guid: 895c1c1609ffcf34c90d124723ad5155, type: 3}
       propertyPath: m_AnchorMax.y
